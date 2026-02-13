@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber build/CSC4996_Proposal"] 1771001805.14264 "build/CSC4996_Proposal.bcf" "build/CSC4996_Proposal.bbl" "build/CSC4996_Proposal" 1771001810.46474 0
-  "build/CSC4996_Proposal.bcf" 1771001810 107802 cdad34f79b68837074b1d297a7e1b38e "pdflatex"
+["biber build/CSC4996_Proposal"] 1771001805.14264 "build/CSC4996_Proposal.bcf" "build/CSC4996_Proposal.bbl" "build/CSC4996_Proposal" 1771003168.62693 0
+  "build/CSC4996_Proposal.bcf" 1771003168 107802 cdad34f79b68837074b1d297a7e1b38e "pdflatex"
   (generated)
   "build/CSC4996_Proposal.bbl"
   "build/CSC4996_Proposal.blg"
   (rewritten before read)
-["pdflatex"] 1771001808.8081 "d:/My University/CSC4996 Research/Research Proposal/V2/CSC4996_Proposal_V2/CSC4996_Proposal.tex" "build/CSC4996_Proposal.pdf" "CSC4996_Proposal" 1771001810.46545 0
+["pdflatex"] 1771003166.92151 "d:/My University/CSC4996 Research/Research Proposal/V2/CSC4996_Proposal_V2/CSC4996_Proposal.tex" "build/CSC4996_Proposal.pdf" "CSC4996_Proposal" 1771003168.62777 0
   "C:/Users/Ravin/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1770995220 81107 70b8516c68c2e617189c5e44bfd16b96 ""
   "C:/Users/Ravin/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1769592013 13333487 34672f6932475314df55cabe1cc21192 ""
   "C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc" 1256929440 2327 9d6df24f9c4f7368395224341a95523a ""
@@ -212,14 +212,14 @@
   "C:/Users/Ravin/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/Ravin/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
   "CSC4996_Proposal.tex" 1771001803 5104 18f90c417fc31a54438d906d89536bfc ""
-  "build/CSC4996_Proposal.aux" 1771001810 3087 49a7dd6241d172a4204ab7bd38b722d2 "pdflatex"
+  "build/CSC4996_Proposal.aux" 1771003168 5238 70e97d7bd33514dd6c5bad13b1b3c9e5 "pdflatex"
   "build/CSC4996_Proposal.bbl" 1771001807 486 76d65a242ec496c9b4361af646ff12cb "biber build/CSC4996_Proposal"
-  "build/CSC4996_Proposal.equ" 1771001810 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "build/CSC4996_Proposal.lof" 1771001810 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "build/CSC4996_Proposal.lot" 1771001810 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "build/CSC4996_Proposal.out" 1771001810 743 7e062c9d52558eb2c07c4f2de6a741a5 "pdflatex"
-  "build/CSC4996_Proposal.run.xml" 1771001810 2486 bcc9c95a5e72840fe0a30b8aac263ddc "pdflatex"
-  "build/CSC4996_Proposal.toc" 1771001810 344 02c0d30a3b0568b383fe930b19019b42 "pdflatex"
+  "build/CSC4996_Proposal.equ" 1771003168 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/CSC4996_Proposal.lof" 1771003168 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/CSC4996_Proposal.lot" 1771003168 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/CSC4996_Proposal.out" 1771003168 3624 c62bea03b192f049351c5c28191b00a8 "pdflatex"
+  "build/CSC4996_Proposal.run.xml" 1771003168 2486 bcc9c95a5e72840fe0a30b8aac263ddc "pdflatex"
+  "build/CSC4996_Proposal.toc" 1771003168 1797 490c7673d0dedf90c899ce13f2a61ce1 "pdflatex"
   "d:/My University/CSC4996 Research/Research Proposal/V2/CSC4996_Proposal_V2/CSC4996_Proposal.tex" 1771001803 5104 18f90c417fc31a54438d906d89536bfc ""
   "frontmatter/abbreviations.tex" 1770924933 1814 f1e0d16db3a09116e4e28809bcc23deb ""
   "frontmatter/listofequations.tex" 1770669986 440 333c7cfa8d61e00a5247be0e531277f7 ""
@@ -227,12 +227,12 @@
   "frontmatter/listoftables.tex" 1770530884 543 5a110839ec5116b4ebd3a8d279b818ba ""
   "frontmatter/preface.tex" 1770529598 1278 2b46146ee04f7373c4625a3240e3f2a8 ""
   "frontmatter/tableofcontents.tex" 1770534844 821 c2905eb3fde38650e48577c2990b6240 ""
-  "sections/1_introduction.tex" 1771001463 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "sections/2_background.tex" 1771001473 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "sections/3_methodology.tex" 1771001485 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "sections/4_results.tex" 1771001498 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "sections/5_project_schedule.tex" 1771001509 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "sections/appendices.tex" 1771001785 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "sections/1_introduction.tex" 1771002568 652 145e38ad78144ba23c96a615d5621b54 ""
+  "sections/2_background.tex" 1771002731 1232 f430aed8438874ecaa9eae41fdfad0ca ""
+  "sections/3_methodology.tex" 1771003099 695 8f732d7d777f24d38c40890e93ff0034 ""
+  "sections/4_results.tex" 1771003142 182 ceb1e8a959518ecc18b00c1f3c0cbc17 ""
+  "sections/5_project_schedule.tex" 1771003166 182 5c24d0b2517137eb1f0197898fb9b71f ""
+  "sections/appendices.tex" 1771002268 31 ab68755b58438aa06ce145f7da7c8c64 ""
   "titlepage.tex" 1771001580 1490 c92038f9e4054460437a26da290d52c1 ""
   (generated)
   "build/CSC4996_Proposal.aux"

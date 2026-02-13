@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  13 FEB 2026 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  13 FEB 2026 22:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,33 +1119,42 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]) (frontmatter/abbreviations.tex) [7
 
-] (sections/1_introduction.tex) (sections/2_background.tex) (sections/3_methodology.tex) (sections/4_results.tex) (sections/5_project_schedule.tex)
+] (sections/1_introduction.tex [1
+
+]) (sections/2_background.tex [2]) (sections/3_methodology.tex [3]) (sections/4_results.tex
+Overfull \hbox (8.0684pt too wide) in paragraph at lines 1--1
+|[]\OT1/lmr/bx/n/16 ANTICIPATED RE-SULTS/FINAL PROD-UCTS| 
+ []
+
+[4]) (sections/5_project_schedule.tex [5])
 
 LaTeX Warning: Empty bibliography on input line 156.
 
-(sections/appendices.tex) (d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.aux)
+(sections/appendices.tex) [6
+
+] (d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
 Package rerunfilecheck Info: File `CSC4996_Proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 7E062C9D52558EB2C07C4F2DE6A741A5;743.
+(rerunfilecheck)             Checksum: C62BEA03B192F049351C5C28191B00A8;3624.
 Package logreq Info: Writing requests to 'CSC4996_Proposal.run.xml'.
 \openout1 = `CSC4996_Proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34688 strings out of 467871
- 699564 string characters out of 5418376
- 1539807 words of memory out of 5000000
- 62964 multiletter control sequences out of 15000+600000
+ 34734 strings out of 467871
+ 700149 string characters out of 5418376
+ 1544809 words of memory out of 5000000
+ 62987 multiletter control sequences out of 15000+600000
  677399 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,5n,104p,1286b,807s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb>
-Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (7 pages, 143811 bytes).
+Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (13 pages, 176022 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 8 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
