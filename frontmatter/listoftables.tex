@@ -1,0 +1,19 @@
+% --- List of Tables Page ---
+\clearpage
+\thispagestyle{plain} % Shows the Roman numeral 'v' at the bottom 
+
+% Centers your custom title to match the department template 
+\begin{center}
+    \textbf{\Large List of Tables}
+\end{center}
+\vspace{0.5cm}
+
+% Use a group to locally hide the default \listoftables title
+\begingroup
+\renewcommand{\listtablename}{} % Removes the default title
+\listoftables 
+\endgroup
+
+% Adds the "LIST OF TABLES" entry to the Table of Contents 
+\addcontentsline{toc}{section}{LIST OF TABLES}
+\newpage

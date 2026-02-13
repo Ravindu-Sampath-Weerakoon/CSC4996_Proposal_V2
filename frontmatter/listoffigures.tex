@@ -1,0 +1,19 @@
+% --- List of Figures Page ---
+\clearpage
+\thispagestyle{plain} % Shows the Roman numeral 'iv' at the bottom 
+
+% Centers your custom title [cite: 1117]
+\begin{center}
+    \textbf{\Large List of Figures}
+\end{center}
+\vspace{0.5cm}
+
+% Use a group to locally hide the default \listoffigures title
+\begingroup
+\renewcommand{\listfigurename}{} % Removes the default title
+\listoffigures 
+\endgroup
+
+% Adds the "LIST OF FIGURES" entry to the Table of Contents 
+\addcontentsline{toc}{section}{LIST OF FIGURES}
+\newpage

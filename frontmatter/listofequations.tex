@@ -1,0 +1,20 @@
+% frontmatter/listofequations.tex
+
+\clearpage
+\thispagestyle{plain}
+
+% 1. Center the Title manually
+\begin{center}
+    \textbf{\Large List of Equations}
+\end{center}
+\vspace{0.5cm}
+
+% 2. Print the list (hiding the default title so it doesn't print twice)
+\begingroup
+\renewcommand{\listequationsname}{} 
+\listofequations 
+\endgroup
+
+% 3. Add to Table of Contents
+\addcontentsline{toc}{section}{LIST OF EQUATIONS}
+\newpage

@@ -1,0 +1,30 @@
+% --- frontmatter/tableofcontents.tex ---
+\clearpage
+\thispagestyle{plain} 
+
+% 1. Manually print the Custom Title
+\begin{center}
+    \fontsize{16pt}{20pt}\selectfont\textbf{Table of Contents}
+\end{center}
+\vspace{0.8cm}
+
+% 2. Add to TOC 
+% (Placed before \tableofcontents so the bookmark links to the top of the page)
+\addcontentsline{toc}{section}{TABLE OF CONTENTS}
+
+% 3. Generate TOC
+\begingroup
+    % Hide the default "Contents" name
+    \renewcommand{\contentsname}{} 
+    
+    % Remove the default vertical spacing inserted by the tocloft package
+    % (This prevents the gap or overlap at the top of the list)
+    \setlength{\cftbeforetoctitleskip}{-2em}
+    \setlength{\cftaftertoctitleskip}{0pt}
+    
+    
+    \fontsize{10pt}{12pt}\selectfont
+    \tableofcontents
+\endgroup
+
+\newpage
