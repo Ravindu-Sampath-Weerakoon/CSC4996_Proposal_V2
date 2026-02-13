@@ -1,10 +1,27 @@
 \section[INTRODUCTION]{Introduction}
-
 %An overview of the research domain and background, highlighting the motivation andsignificance of the study and briefly indicating the existence of a research gap.
+
+\paragraph{Overview of the Research Domain} The more conventional knowledge-based authentication techniques, such passwords and Personal Identification Numbers (PINs), are quickly turning into single points of failure in the constantly changing cybersecurity landscape of today. Well-known assaults like shoulder surfing, brute-force attacks, and social engineering can affect these static authentication systems. Behavioral Biometrics, more especially Keystroke Dynamics and Mouse Dynamics, has become a strong alternative authentication technique for confirming digital identification in response to the drawbacks and weaknesses of static authentication approaches. Behavioral biometrics enable continuous and passive user authentication based on a user's unique typing patterns or mouse movement trajectories, as opposed to static passwords, which authenticate what a user knows.
+
+
+\paragraph{Motivation and Significance} The use of behavioral biometrics creates a significant privacy conundrum even if they provide strong defense against unwanted access. In contrast to passwords, biometric characteristics are inherent and unchangeable; if the biometric template is compromised, a user cannot alter their hand geometry or typing rhythm. The storing of raw templates in a central database is therefore a high-risk liability since a breach of raw behavioral data results in a permanent loss of digital identity.
+
+\paragraph{} The state-of-the-art solutions to this privacy issue involve the use of heavy cryptographic techniques, including Homomorphic Encryption (HE), which enables computations to be performed on the encrypted data. Nevertheless, these approaches involve unaffordable computational costs and high system latency, making them unsuitable for real-time, continuous monitoring in resource-constrained edge devices. This gives rise to a substantial trade-off, whereby the current solutions are either fast and privacy-invasive (using raw data) or private but slow (using heavy encryption).
+
+\paragraph{Existence of a Research Gap}
+Unified frameworks that successfully strike a compromise between robust template privacy and high-speed anomaly detection are currently lacking. Current "lightweight" methods frequently ignore the requirement for biometric revocability—the capacity to cancel and replace a compromised biometric template—in favor of concentrating only on recognition accuracy. In order to fill this gap, this study suggests a brand-new, lightweight framework that combines Deep Support Vector Data Description (Deep SVDD) with Keyed Johnson-Lindenstrauss (JL) Projections. This method seeks to ensure a safe and smooth user experience by offering mathematically guaranteed privacy and template revocability without the latency costs of conventional encryption.
+
 
 \subsection{Problem Statement}
 
 %A clear and focused description of the problem, identifying what the issue is, who orwhat is affected, and why existing solutions are insufficient.
+
+
+\paragraph{} The crucial trade-off between user privacy, system latency, and template revocability in continuous behavioral authentication systems is the main issue this study attempts to solve. Although behavioral biometrics, like Keystroke Dynamics and Mouse Trajectories, provide a reliable way to continuously confirm a user's identification, there are serious security vulnerabilities associated with the processing and storage of these behavioral patterns. Behavioral biometrics are inherent and unchangeable, unlike passwords or tokens; if the biometric template is hacked, a person cannot alter their hand shape or biomechanical typing rhythm. Therefore, centralized biometric databases are a high-value target for attackers as a breach of raw behavioral data results in a permanent loss of digital identity.
+
+\paragraph{} Current approaches fail to address this problem effectively due to a technical dichotomy between security and performance:
+
+
 
 \subsection{Research Aim and Objectives}
 %The aim and the specific objectives of the proposed research.

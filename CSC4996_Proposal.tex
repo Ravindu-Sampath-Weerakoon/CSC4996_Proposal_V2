@@ -6,6 +6,7 @@
 
 % --- Encoding & Fonts ---
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 
 % --- Page Layout & Geometry ---
@@ -14,49 +15,72 @@
 \usepackage{titlesec} % For custom section formatting
 \usepackage{tocloft}  % For Table of Contents formatting
 
-% --- Graphics & Figures ---
-\usepackage{graphicx}
-\usepackage{float}    % For [H] placement option
-\usepackage{tikz}     % For drawing diagrams
-
-% --- Tables (CRITICAL) ---
-\usepackage[table]{xcolor} % <--- Must be loaded BEFORE booktabs
-\usepackage{booktabs}      % Professional table rules
+% --- Tables (CRITICAL: Load Order Matters) ---
+\usepackage[table]{xcolor} % Must be loaded BEFORE booktabs/tikz
+\usepackage{booktabs}      % Professional table rules (toprule, midrule)
+\usepackage{array}         % For advanced column formatting
 \usepackage{tabularx}      % For adjustable-width columns
 \usepackage{longtable}     % For tables that span multiple pages
-\usepackage{array}         % For advanced column formatting
-\usepackage{tabularx}
-\usepackage{pgfgantt}
+\usepackage{xltabular}     % Hybrid of longtable and tabularx (The Gold Standard)
+\usepackage{ragged2e}      % For better text wrapping (\raggedright in tables)
+\usepackage{multirow}      % Useful for complex headers
 
-% --- Math & Citations ---
-\usepackage{amsmath}              % Required for math and equations
-\usepackage[style=ieee]{biblatex} % Mandatory IEEE Citation Style
+% --- Graphics & Visualization ---
+\usepackage{graphicx}
+\usepackage{float}         % For [H] placement option
+\usepackage{tikz}          % For drawing system architecture diagrams
+\usepackage{pgfgantt}      % For Project Schedule (Gantt Chart)
 
-% --- Navigation & Acronyms ---
-\usepackage[printonlyused]{acronym} % For List of Abbreviations
-\usepackage[hidelinks]{hyperref}    % Interactive links (Load last generally)
+\usepackage{microtype}     % Magically fixes small overfull hbox warnings
 
+% --- TikZ Libraries ---
+\usetikzlibrary{
+    shapes, 
+    shapes.geometric, 
+    shapes.symbols, 
+    arrows.meta, 
+    positioning, 
+    fit, 
+    calc, 
+    shadows,
+    decorations.pathreplacing, 
+    decorations.pathmorphing
+}
 
+% --- Code Listings ---
 \usepackage{listings}
-\usepackage{xcolor}
-
 \lstset{
     basicstyle=\ttfamily\small,
     keywordstyle=\color{blue},
     commentstyle=\color{green!50!black},
     stringstyle=\color{red},
     breaklines=true,
-    frame=single
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
 }
 
-% --- TikZ Libraries ---
-\usetikzlibrary{shapes, shapes.geometric, shapes.symbols, arrows.meta, positioning, fit, calc, decorations.pathreplacing, decorations.pathmorphing}
+% --- Math & Citations ---
+\usepackage{amsmath}              % Required for math and equations
+\usepackage{amssymb}              % Additional math symbols
+\usepackage[style=ieee, backend=biber]{biblatex} % IEEE Citation Style
+\addbibresource{references.bib}   % Link your bibliography file
+
+% --- Navigation & Acronyms ---
+\usepackage[printonlyused]{acronym} % For List of Abbreviations
+\usepackage[hidelinks]{hyperref}    % Interactive links (Load last)
 
 % =========================================================
-% 2. CUSTOM STYLING
+% 2. CUSTOM STYLING & FORMATTING
 % =========================================================
 
-% --- A. Table of Contents Styling ---
+% --- A. Warning Suppression (Cleaner Logs) ---
+% Silences "Overfull \hbox" warnings less than 20pt (invisible to eye)
+\hfuzz=20pt 
+% Silences "Underfull \hbox" warnings (stretched spacing)
+\hbadness=10000 
+
+% --- B. Table of Contents Styling ---
 \makeatletter
 \renewcommand{\@dotsep}{2} 
 \makeatother
@@ -66,7 +90,7 @@
 \renewcommand{\cftsecfont}{\bfseries} 
 \renewcommand{\cftsecpagefont}{\bfseries}
 
-% --- B. Section Numbering & Spacing ---
+% --- C. Section Numbering & Spacing ---
 % Space between Section number "1.0" and title "Introduction"
 \setlength{\cftsecnumwidth}{3.0em} 
 
@@ -79,18 +103,18 @@
 \setlength{\cftsubsecindent}{3.0em} 
 \renewcommand{\cftsubsecfont}{\normalfont}
 
-% --- C. Section Font Sizes (16pt/14pt) ---
+% --- D. Section Font Sizes (16pt/14pt) ---
 \titleformat{\section}
   {\normalfont\fontsize{16pt}{20pt}\bfseries}{\thesection}{1em}{}
 
 \titleformat{\subsection}
   {\normalfont\fontsize{14pt}{18pt}\bfseries}{\thesubsection}{1em}{}
 
-% --- D. Custom Numbering (1.0, 2.0) ---
+% --- E. Custom Numbering (1.0, 2.0) ---
 \renewcommand{\thesection}{\arabic{section}.0}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
-% --- E. List of Equations Setup ---
+% --- F. List of Equations Setup ---
 \newcommand{\listequationsname}{List of Equations}
 \newlistof{equations}{equ}{\listequationsname}
 
@@ -103,12 +127,9 @@
 \setlength{\cftequationsnumwidth}{2.5em} 
 \setlength{\cftequationsindent}{1.5em}   
 
-% --- F. Bibliography Resource ---
-\addbibresource{references.bib}
-
-% --- G. Fixes ---
-% Fix for "Infinite glue shrinkage" warning in longtables
+% --- G. Table Fixes ---
 \raggedbottom 
+\setlength{\tabcolsep}{6pt} % Default table padding
 
 % =========================================================
 % 3. DOCUMENT CONTENT
@@ -157,6 +178,7 @@
 
 \newpage
 % Appendices
+\appendix % Switch to Appendix numbering (A, B, C...)
 \input{sections/appendices}
 
 \end{document}
