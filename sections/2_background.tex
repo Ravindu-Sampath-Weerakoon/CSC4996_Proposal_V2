@@ -5,7 +5,7 @@
 
 \subsection{Theoretical and Technical Background}
 
-The proposed research integrates concepts from high-dimensional geometry, privacy-preserving machine learning, and multimodal behavioral biometrics. This section outlines the mathematical and architectural foundations required to understand the Keyed-JL and Deep SVDD framework.
+The proposed research combines ideas from high-dimensional geometry, privacy-preserving machine learning, and multimodal behavioral biometrics. This section describes the mathematical and architectural foundations necessary to comprehend the Keyed-JL and Deep SVDD framework.
 
 \subsubsection{The Johnson-Lindenstrauss (JL) Lemma}
 
@@ -242,7 +242,7 @@ The system architecture relies on the fusion of keystroke timing and mouse movem
 
 \subsection{Literature Review}
 
-The evolution of behavioral authentication has transitioned from simple timing analysis to complex multimodal deep learning frameworks. This section categorizes previous research into key subdomains applicable to the proposed Keyed-JL and Deep SVDD framework.
+The development of behavioral authentication has moved from basic timing analysis to intricate multimodal deep learning models. This section groups existing work into major subfields relevant to the proposed Keyed-JL and Deep SVDD framework.
 
 \begin{table}[http] 
     \centering
@@ -265,7 +265,7 @@ The evolution of behavioral authentication has transitioned from simple timing a
         \textbf{Feature Engineering:} Introduced ``user-adaptive'' features, showing that personalized feature selection improves accuracy. & 
         Focused entirely on accuracy; lacked any ``template protection'' or encryption to secure the stored data. \\
         \hline
-        \textbf{Kim et al. (2024)} \cite{kim2024kdprint} & 
+        Kim et al. (2024) \cite{kim2024kdprint} & 
         \textbf{\ac{Deep SVDD} Validation:} Demonstrated that \ac{Deep SVDD} outperforms traditional models (6.7\% \ac{EER}) by encoding time-series data into images. & 
         Restricted to \textit{mobile \acp{PIN}} (touch interactions) and lacked cryptographic encryption (\ac{HE}) or multimodal fusion (Mouse). \\
         \hline
@@ -283,14 +283,13 @@ The evolution of behavioral authentication has transitioned from simple timing a
 
 
 \subsubsection{Foundational Keystroke Dynamics}
-Early research established the feasibility of using typing patterns as a biometric. Foundational studies by Gaines et al. identified that keystroke timing—specifically dwell times and flight times—is unique to individuals. While initial systems focused on static login verification \cite{joyce1990identity}, subsequent work by Shepherd introduced continuous authentication, allowing for persistent session monitoring. Monrose and Rubin further demonstrated the utility of these patterns in hardening traditional password-based security.
+Early work proved the concept of biometric authentication using typing patterns. Key studies by Gaines et al. showed that keystroke timing, namely dwell time and flight time, is distinct to each user. Although early biometric systems were based on static login authentication \cite{joyce1990identity}, later research by Shepherd introduced continuous authentication, enabling ongoing monitoring of sessions. Monrose and Rubin later showed the value of these patterns in securing traditional password-based systems.
 
 \subsubsection{Multimodal Fusion and Mouse Dynamics}
-To improve recognition robustness, researchers integrated mouse dynamics and fusion techniques. Ahmed and Traore proved that mouse movement trajectories and click frequencies provide a distinct behavioral signature. Mondal and Bours showed that a multimodal approach, fusing keystroke and mouse data, significantly improves the Equal Error Rate (EER) over unimodal systems. Recent datasets, such as those by Reddy, emphasize feature-engineered mouse dynamics for anomaly detection.
+To enhance the robustness of recognition, researchers combined mouse dynamics and fusion methods. Ahmed and Traore demonstrated that mouse movement trajectories and click rates form a unique behavioral pattern. Mondal and Bours demonstrated that a multimodal system, combining keystroke and mouse information, leads to a substantial improvement in the Equal Error Rate (EER) compared to unimodal systems. More recent challenges, such as those proposed by Reddy, focus on mouse dynamics based on feature engineering for anomaly detection.
 
 \subsubsection{Deep Learning and Privacy Methodologies}
-Modern research utilizes deep learning but highlights growing privacy concerns. High-accuracy models using Recurrent Neural Networks (RNN) and Bayesian neural networks have become standard for behavior modeling. However, as shown by Kim et al. in the KDPrint framework, encoding behavioral data into standardized images can leave templates vulnerable if not properly secured. While Homomorphic Encryption (HE) offers a mathematical solution for privacy, its latency often exceeds the requirements for continuous monitoring. This research addresses this gap by combining the privacy of Keyed-JL projections with the efficiency of Deep SVDD.
-
+Contemporary studies apply deep learning but point out the increasing privacy issues. High-accuracy models based on Recurrent Neural Networks (RNN) and Bayesian neural networks have become common practice for behavior modeling. Nevertheless, as demonstrated in the KDPrint framework by Kim et al., the representation of behavioral data in the form of standardized images can make templates susceptible to attacks if they are not appropriately protected. Although Homomorphic Encryption (HE) provides a mathematical remedy for privacy, its latency may be beyond the needs of continuous monitoring. This study fills the gap by integrating the privacy of Keyed-JL projections with the efficiency of Deep SVDD.
 %Related literature and previous research work categorized by subdomains/topicsapplicable to your research. Summarize and compare related studies, existing methods,datasets, evaluations, findings
 
 
@@ -299,15 +298,14 @@ Despite advancements in behavioral biometrics, a critical gap exists in providin
 
 \subsubsection{Technical Dichotomy: Privacy vs. Performance}
 
-A significant gap exists between high-accuracy Deep Learning models and privacy-preserving cryptographic methods. Standard models often store reversible templates, while Homomorphic Encryption introduces prohibitive latencies (often $>1.5$s) that are unsuitable for continuous monitoring on edge devices.
-
+There is a large gap between highly accurate Deep Learning models and privacy-preserving cryptographic approaches. Traditional models retain reversible templates, whereas Homomorphic Encryption imposes unacceptably high latencies (typically $>1.5$s) that are not applicable for continuous observation on edge devices.
 
 
 \subsubsection{Vulnerability of Static Biometric Templates}
-Current literature lacks a standardized mechanism for ``cancelable'' behavioral biometrics. Unlike traditional credentials, behavioral patterns are immutable; if a stored template is compromised, the user's digital identity is permanently at risk because existing systems do not offer a lightweight way to re-issue a new, uncorrelated behavioral profile.
+There is no standardized way for “cancelable” behavioral biometrics in current literature. Unlike traditional authentication methods, behavioral traits are non-reversible; if a stored template is breached, the user’s digital identity is put at risk because there is no lightweight method to re-issue a new, non-correlated behavioral profile.
 
 \subsubsection{Limitations of Unimodal Authentication}
-Most privacy-preserving transformations result in some degree of information loss. Existing unimodal research (keystroke only or mouse only) often fails to maintain high recognition accuracy when aggressive dimensionality reduction is applied. There is a gap in research exploring how multimodal fusion can specifically compensate for the entropy loss caused by privacy-preserving projections.
+The majority of privacy-preserving transformations lead to a certain level of information loss. The current state of unimodal studies (either keystroke or mouse) tends to neglect the recognition accuracy while applying strong dimensionality reduction. There is a research gap concerning the compensation of entropy loss due to privacy-preserving transformations by multimodal fusion.
 
 \subsubsection{Gap Definition}
 

@@ -219,6 +219,42 @@
       \field{pages}{73\bibrangedash 82}
       \range{pages}{10}
     \endentry
+    \entry{rathgeb2011cancelable}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=92212822ef15944fc3a993978d2e6374}{%
+           family={Rathgeb},
+           familyi={R\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9a3267f4f8aa39086f9b8dc39df134d4}{%
+           family={Uhl},
+           familyi={U\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{fullhash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{fullhashraw}{44831beb4a98ebeaade19ae34803c234}
+      \strng{bibnamehash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{authorbibnamehash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{authornamehash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{authorfullhash}{44831beb4a98ebeaade19ae34803c234}
+      \strng{authorfullhashraw}{44831beb4a98ebeaade19ae34803c234}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Information Security Technical Report}
+      \field{number}{1}
+      \field{title}{Cancelable biometrics: a survey}
+      \field{volume}{16}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 22}
+      \range{pages}{22}
+    \endentry
     \entry{kim2018user}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -542,6 +578,78 @@
       \field{title}{KDPrint: Passive Authentication Using Keystroke Dynamics-to-Image Encoding via Standardization}
       \field{year}{2024}
     \endentry
+    \entry{wang2014alignment}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=cb32d16276e91a27c281179edf207f9e}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Shi},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6497a0c97e1666946fcd09c1c7cc3e2a}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Jiankun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{fullhash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{fullhashraw}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{bibnamehash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{authorbibnamehash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{authornamehash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{authorfullhash}{5cca4cb76c5043199e6ce9f4193301ab}
+      \strng{authorfullhashraw}{5cca4cb76c5043199e6ce9f4193301ab}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2014 IEEE 13th International Conference on Trust, Security and Privacy in Computing and Communications}
+      \field{title}{Alignment-free cancelable fingerprint templates based on m-triplets and keyed random projection}
+      \field{year}{2014}
+      \field{pages}{578\bibrangedash 585}
+      \range{pages}{8}
+    \endentry
+    \entry{teoh2006random}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=506686472606dd43fde90f12b3cc7e99}{%
+           family={Teoh},
+           familyi={T\bibinitperiod},
+           given={Andrew\bibnamedelima BJ},
+           giveni={A\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=db9def6b07c04df39106feb778cf59d8}{%
+           family={Ngo},
+           familyi={N\bibinitperiod},
+           given={David\bibnamedelima CL},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b9936106b6cca2aa68ea69302a4a9ae9}{%
+           family={Goh},
+           familyi={G\bibinitperiod},
+           given={Alwyn},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{209432464914c68d18656346b039e22c}
+      \strng{fullhash}{8c6af457f21bc3bf485e614b3bc8e088}
+      \strng{fullhashraw}{8c6af457f21bc3bf485e614b3bc8e088}
+      \strng{bibnamehash}{8c6af457f21bc3bf485e614b3bc8e088}
+      \strng{authorbibnamehash}{8c6af457f21bc3bf485e614b3bc8e088}
+      \strng{authornamehash}{209432464914c68d18656346b039e22c}
+      \strng{authorfullhash}{8c6af457f21bc3bf485e614b3bc8e088}
+      \strng{authorfullhashraw}{8c6af457f21bc3bf485e614b3bc8e088}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{12}
+      \field{title}{Random multispace quantization as an analytic mechanism for bio-hashing of biometric data}
+      \field{volume}{28}
+      \field{year}{2006}
+      \field{pages}{1892\bibrangedash 1901}
+      \range{pages}{10}
+    \endentry
     \entry{suais2019bbmas}{article}{}{}
       \name{author}{2}{}{%
         {{hash=429d2f341559d36a2b82a986e624f7d9}{%
@@ -563,8 +671,8 @@
       \strng{authornamehash}{503e533c3bbeddd74b9ab12ba71fc713}
       \strng{authorfullhash}{503e533c3bbeddd74b9ab12ba71fc713}
       \strng{authorfullhashraw}{503e533c3bbeddd74b9ab12ba71fc713}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Dataport}
@@ -590,8 +698,8 @@
       \strng{authornamehash}{92ef63f4724d4a5af6edd1326565079e}
       \strng{authorfullhash}{92ef63f4724d4a5af6edd1326565079e}
       \strng{authorfullhashraw}{92ef63f4724d4a5af6edd1326565079e}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{International Conference on Biometrics}
@@ -632,8 +740,8 @@
       \strng{authornamehash}{963e5bbdd27fb8c15d8a783f9478908b}
       \strng{authorfullhash}{f9315bcb02770e8d5a0a8bf1b90339ab}
       \strng{authorfullhashraw}{f9315bcb02770e8d5a0a8bf1b90339ab}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Scientific Data}
@@ -662,8 +770,8 @@
       \strng{authornamehash}{9b03449f8c35bf8c736debc128cf50f5}
       \strng{authorfullhash}{9b03449f8c35bf8c736debc128cf50f5}
       \strng{authorfullhashraw}{9b03449f8c35bf8c736debc128cf50f5}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Carnegie Mellon University}
@@ -686,8 +794,8 @@
       \strng{authornamehash}{848d06d54b0d9e1e8221cd1a3b986cf0}
       \strng{authorfullhash}{848d06d54b0d9e1e8221cd1a3b986cf0}
       \strng{authorfullhashraw}{848d06d54b0d9e1e8221cd1a3b986cf0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Figshare}

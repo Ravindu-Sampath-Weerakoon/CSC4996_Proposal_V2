@@ -1,5 +1,135 @@
 \section[PROJECT SCHEDULE]{Project Schedule}
 
-%Expected results and scientific contribution/contribution to knowledge. Potential impactand significance of the findings.
+
+\subsection{Project Timeline Overview}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{4cm}|}
+\hline
+\textbf{Milestone} & \textbf{Target Date} \\
+\hline
+Assignment of Supervisors & January 2, 2026 \\
+Submission of Research Proposal & February 15, 2026 \\
+Research Proposal Defense & February 25, 2026 \\
+Submission of Introduction \& Literature Review & May 17, 2026 \\
+Mid Review Presentation & May 27, 2026 \\
+Submission of Methodology Chapter & August 9, 2026 \\
+Submission of Full Project Report & September 27, 2026 \\
+Final Presentation & October 19--20, 2026 \\
+\hline
+\end{tabular}
+\caption{Official Project Milestones}
+\end{table}
+
+
+
+\subsection{Task Breakdown Structure}
+
+The project work is divided into the following major phases, with detailed task-level activities outlined below:
+
+\begin{description}
+
+    \item \subsubsection{{Phase 1: Literature Review and Problem Refinement}} (Jan -- May 2026)
+    \begin{itemize}
+        \item Conduct comprehensive review on Behavioral Biometrics
+        \item Study Keystroke and Mouse Dynamics feature extraction methods
+        \item Analyze privacy-preserving biometric techniques (HE, SMPC, Cancelable Biometrics)
+        \item Review Deep SVDD and one-class anomaly detection models
+        \item Identify research gap and finalize problem statement
+        \item Prepare and submit Introduction and Literature Review chapters
+    \end{itemize}
+
+    \item \subsubsection{{Phase 2: System Design and Feature Engineering}} (May -- July 2026)
+    \begin{itemize}
+        \item Design overall system architecture
+        \item Define multimodal feature extraction pipeline
+        \item Implement feature preprocessing and normalization
+        \item Design Keyed Johnson–Lindenstrauss projection mechanism
+        \item Define evaluation metrics (FAR, FRR, EER, Accuracy)
+    \end{itemize}
+
+    \item \subsubsection{{Phase 3: Model Development (Deep SVDD + JL Projection)}} (June -- August 2026)
+    \begin{itemize}
+        \item Implement Deep SVDD architecture
+        \item Integrate projected features into model training
+        \item Optimize hyperparameters
+        \item Perform model validation
+        \item Analyze computational complexity and latency
+    \end{itemize}
+
+    \item \subsubsection{{Phase 4: Experimental Evaluation and Analysis}} (August -- September 2026)
+    \begin{itemize}
+        \item Conduct authentication performance evaluation
+        \item Measure privacy robustness against inversion attacks
+        \item Compare proposed framework with baseline methods
+        \item Analyze trade-off between privacy, accuracy, and latency
+        \item Prepare experimental result visualizations
+    \end{itemize}
+
+    \item \subsubsection{{Phase 5: Documentation and Final Report Writing}} (September -- October 2026)
+    \begin{itemize}
+        \item Write Methodology and Results chapters
+        \item Prepare discussion and conclusion sections
+        \item Refine figures, tables, and diagrams
+        \item Perform plagiarism and formatting checks
+        \item Prepare final presentation slides
+        \item Submit final project report
+    \end{itemize}
+
+\end{description}
+
+\subsection{Gantt Chart Representation}
+
+\begin{center}
+\begin{ganttchart}[
+    hgrid,
+    vgrid
+]{1}{10}
+
+\gantttitle{Project Timeline}{10} \\
+\gantttitlelist{1,2,3,4,5,6,7,8,9,10}{1} \\
+
+\ganttbar{Literature Review}{1}{5} \\
+\ganttbar{System Design}{4}{7} \\
+\ganttbar{Model Development}{5}{8} \\
+\ganttbar{Evaluation}{8}{9} \\
+\ganttbar{Report Writing}{9}{10}
+
+\end{ganttchart}
+\end{center}
+
+\noindent
+\textit{Note: 1=Jan, 2=Feb, 3=Mar, 4=Apr, 5=May, 6=Jun, 7=Jul, 8=Aug, 9=Sep, 10=Oct.}
+
+\subsection{Workload Distribution}
+
+The estimated workload distribution across project phases is illustrated in Figure~\ref{fig:piechart}.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\pie[
+    text=legend,
+    radius=3
+]
+{
+25/Literature Review,
+20/System Design,
+25/Model Development,
+15/Evaluation,
+15/Writing \& Documentation
+}
+\end{tikzpicture}
+\caption{Workload Distribution Across Project Phases}
+\label{fig:piechart}
+\end{figure}
+
+
+\subsection{Project Management Strategy}
+
+
+The proposed project will adopt an incremental research development approach. Each stage will build upon the previous stage, allowing for the early validation of assumptions before moving on to the computationally intensive task of model training. There will be regular meetings with the supervisor to track progress and address potential risks.
+
 
 \newpage

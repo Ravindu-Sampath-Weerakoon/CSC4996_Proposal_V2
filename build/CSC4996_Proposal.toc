@@ -2,17 +2,18 @@
 \contentsline {section}{TABLE OF CONTENTS}{iii}{Doc-Start}%
 \contentsline {section}{LIST OF FIGURES}{v}{Doc-Start}%
 \contentsline {section}{LIST OF TABLES}{vi}{Doc-Start}%
-\contentsline {section}{LIST OF EQUATIONS}{vii}{Doc-Start}%
-\contentsline {section}{LIST OF ABBREVIATIONS}{viii}{Doc-Start}%
+\contentsline {section}{LIST OF EQUATIONS}{vi}{Doc-Start}%
+\contentsline {section}{LIST OF ABBREVIATIONS}{vii}{Doc-Start}%
 \contentsline {section}{\numberline {1.0}INTRODUCTION}{1}{section.1}%
 \contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.2}%
-\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.3}%
-\contentsline {paragraph}{}{1}{paragraph*.4}%
-\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.5}%
+\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.4}%
+\contentsline {paragraph}{}{1}{paragraph*.5}%
+\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.8}%
 \contentsline {subsection}{\numberline {1.1}Problem Statement}{2}{subsection.1.1}%
-\contentsline {paragraph}{}{2}{paragraph*.6}%
+\contentsline {paragraph}{}{2}{paragraph*.10}%
+\contentsline {paragraph}{}{3}{paragraph*.13}%
 \contentsline {subsection}{\numberline {1.2}Research Aim and Objectives}{3}{subsection.1.2}%
-\contentsline {paragraph}{}{3}{paragraph*.7}%
+\contentsline {paragraph}{}{3}{paragraph*.14}%
 \contentsline {subsection}{\numberline {1.3}Research Questions}{4}{subsection.1.3}%
 \contentsline {section}{\numberline {2.0}BACKGROUND}{5}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Theoretical and Technical Background}{5}{subsection.2.1}%
@@ -34,8 +35,10 @@
 \contentsline {section}{\numberline {3.0}METHODOLOGY AND PROJECT DESIGN}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Overview of the Proposed Research Design}{12}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Data Collection}{13}{subsection.3.2}%
+\contentsline {paragraph}{}{13}{paragraph*.17}%
+\contentsline {paragraph}{}{13}{paragraph*.18}%
 \contentsline {subsubsection}{\numberline {3.2.1}Primary Datasets (Multimodal \& Cross-Device)}{13}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{13}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{14}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Supplementary Data}{14}{subsubsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.3}Ethical Considerations}{14}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Use of Human-Generated Behavioral Data}{14}{subsubsection.3.3.1}%
@@ -44,7 +47,29 @@
 \contentsline {subsection}{\numberline {3.4}Evaluation and Validation}{15}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Authentication Performance Metrics}{15}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Privacy and Efficiency Validation}{16}{subsubsection.3.4.2}%
-\contentsline {section}{\numberline {4.0}Anticipated Results/Final Products}{17}{section.4}%
-\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{18}{section.5}%
-\contentsline {section}{REFERENCES}{19}{section.5}%
-\contentsline {section}{\numberline {A}Appendices}{21}{appendix.A}%
+\contentsline {section}{\numberline {4.0}Anticipated Results / Final Products}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Expected Technical Outcomes}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Scientific Contribution and Contribution to Knowledge}{17}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Novel Contributions}{18}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Final Products}{19}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Potential Impact and Significance}{19}{subsection.4.5}%
+\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Project Timeline Overview}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Task Breakdown Structure}{20}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}{Phase 1: Literature Review and Problem Refinement}}{20}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}{Phase 2: System Design and Feature Engineering}}{20}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.3}{Phase 3: Model Development (Deep SVDD + JL Projection)}}{21}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.4}{Phase 4: Experimental Evaluation and Analysis}}{21}{subsubsection.5.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.5}{Phase 5: Documentation and Final Report Writing}}{21}{subsubsection.5.2.5}%
+\contentsline {subsection}{\numberline {5.3}Gantt Chart Representation}{22}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Workload Distribution}{22}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Project Management Strategy}{22}{subsection.5.5}%
+\contentsline {section}{REFERENCES}{23}{subsection.5.5}%
+\contentsline {section}{\numberline {A}Appendices}{25}{appendix.A}%
+\contentsline {subsection}{\numberline {1.1}Appendix A: Experimental Validation of JL Projection with Deep SVDD}{25}{subsection.A.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}A.1 Python Implementation}{25}{subsubsection.A.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}A.2 Experimental Output}{29}{subsubsection.A.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}A.3 Interpretation of Results}{30}{subsubsection.A.1.3}%
+\contentsline {subsection}{\numberline {1.2}Appendix B: Preliminary Feature Quality Validation}{30}{subsection.A.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}B.1 Python Implementation (Baseline SVM)}{30}{subsubsection.A.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}B.2 Experimental Output and Interpretation}{33}{subsubsection.A.2.2}%

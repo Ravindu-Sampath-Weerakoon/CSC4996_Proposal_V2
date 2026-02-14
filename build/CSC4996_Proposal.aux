@@ -11,34 +11,28 @@
 \acronymused{JL}
 \@writefile{toc}{\contentsline {section}{LIST OF FIGURES}{v}{Doc-Start}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{LIST OF TABLES}{vi}{Doc-Start}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{LIST OF EQUATIONS}{vii}{Doc-Start}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{LIST OF ABBREVIATIONS}{viii}{Doc-Start}\protected@file@percent }
-\newacro{ACM}[\AC@hyperlink{ACM}{ACM}]{Association for Computing Machinery}
+\@writefile{toc}{\contentsline {section}{LIST OF EQUATIONS}{vi}{Doc-Start}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{LIST OF ABBREVIATIONS}{vii}{Doc-Start}\protected@file@percent }
 \newacro{BB-MAS}[\AC@hyperlink{BB-MAS}{BB-MAS}]{Behavioral Biometrics Multi-device and multi-Activity from Same users}
-\newacro{CKKS}[\AC@hyperlink{CKKS}{CKKS}]{Cheon-Kim-Kim-Song (Homomorphic Encryption Scheme)}
 \newacro{CMU}[\AC@hyperlink{CMU}{CMU}]{Carnegie Mellon University}
 \newacro{Deep SVDD}[\AC@hyperlink{Deep SVDD}{Deep SVDD}]{Deep Support Vector Data Description}
 \newacro{DL}[\AC@hyperlink{DL}{DL}]{Deep Learning}
 \newacro{EER}[\AC@hyperlink{EER}{EER}]{Equal Error Rate}
 \newacro{FAR}[\AC@hyperlink{FAR}{FAR}]{False Acceptance Rate}
-\newacro{FHE}[\AC@hyperlink{FHE}{FHE}]{Fully Homomorphic Encryption}
 \newacro{FN}[\AC@hyperlink{FN}{FN}]{False Negative}
 \newacro{FP}[\AC@hyperlink{FP}{FP}]{False Positive}
 \newacro{FRR}[\AC@hyperlink{FRR}{FRR}]{False Rejection Rate}
-\newacro{GPU}[\AC@hyperlink{GPU}{GPU}]{Graphics Processing Unit}
+\newacro{GRR}[\AC@hyperlink{GRR}{GRR}]{Gaussian Random Projection}
 \newacro{HE}[\AC@hyperlink{HE}{HE}]{Homomorphic Encryption}
-\newacro{IEEE}[\AC@hyperlink{IEEE}{IEEE}]{Institute of Electrical and Electronics Engineers}
-\newacro{IND-CPA}[\AC@hyperlink{IND-CPA}{IND-CPA}]{Indistinguishability under Chosen Plaintext Attack}
 \newacro{IoT}[\AC@hyperlink{IoT}{IoT}]{Internet of Things}
 \newacro{JL}[\AC@hyperlink{JL}{JL}]{Johnson-Lindenstrauss}
-\newacro{LHE}[\AC@hyperlink{LHE}{LHE}]{Leveled Homomorphic Encryption}
+\newacro{KMT}[\AC@hyperlink{KMT}{KMT}]{Keystroke and Mouse Trajectory}
 \newacro{LSTM}[\AC@hyperlink{LSTM}{LSTM}]{Long Short-Term Memory}
 \newacro{MSE}[\AC@hyperlink{MSE}{MSE}]{Mean Squared Error}
-\newacro{PII}[\AC@hyperlink{PII}{PII}]{Personally Identifiable Information}
 \newacro{PIN}[\AC@hyperlink{PIN}{PIN}]{Personal Identification Number}
-\newacro{PINs}[\AC@hyperlink{PINs}{PINs}]{Personal Identification Numbers}
-\newacro{R-RCM}[\AC@hyperlink{R-RCM}{R-RCM}]{Robust Recurrent Confidence Model}
+\newacro{ReLU}[\AC@hyperlink{ReLU}{ReLU}]{Rectified Linear Unit}
 \newacro{RNN}[\AC@hyperlink{RNN}{RNN}]{Recurrent Neural Network}
+\newacro{SMPC}[\AC@hyperlink{SMPC}{SMPC}]{Secure Multi-Party Computation}
 \newacro{SU-AIS}[\AC@hyperlink{SU-AIS}{SU-AIS}]{Syracuse University and Assured Information Security}
 \newacro{SVDD}[\AC@hyperlink{SVDD}{SVDD}]{Support Vector Data Description}
 \newacro{SVM}[\AC@hyperlink{SVM}{SVM}]{Support Vector Machine}
@@ -56,8 +50,12 @@
 \abx@aux@segm{0}{0}{mondal2017continuous}
 \abx@aux@cite{0}{monrose1999hardening}
 \abx@aux@segm{0}{0}{monrose1999hardening}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
 \abx@aux@cite{0}{kim2018user}
 \abx@aux@segm{0}{0}{kim2018user}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
 \abx@aux@cite{0}{cheon2017homomorphic}
 \abx@aux@segm{0}{0}{cheon2017homomorphic}
 \abx@aux@cite{0}{rahman2021scalable}
@@ -66,20 +64,111 @@
 \abx@aux@segm{0}{0}{kiyani2020continuous}
 \abx@aux@cite{0}{zheng2011efficient}
 \abx@aux@segm{0}{0}{zheng2011efficient}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
 \abx@aux@cite{0}{ruff2018deepsvdd}
 \abx@aux@segm{0}{0}{ruff2018deepsvdd}
 \abx@aux@cite{0}{johnson1984extensions}
 \abx@aux@segm{0}{0}{johnson1984extensions}
 \@writefile{toc}{\contentsline {section}{\numberline {1.0}INTRODUCTION}{1}{section.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{}{1}{paragraph*.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.5}\protected@file@percent }
+\AC@undonewlabel{acro:PIN}
+\newlabel{acro:PIN}{{1.0}{1}{Overview of the Research Domain}{section*.3}{}}
+\acronymused{PIN}
+\@writefile{toc}{\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{}{1}{paragraph*.5}\protected@file@percent }
+\AC@undonewlabel{acro:HE}
+\newlabel{acro:HE}{{1.0}{1}{}{section*.6}{}}
+\acronymused{HE}
+\AC@undonewlabel{acro:IoT}
+\newlabel{acro:IoT}{{1.0}{1}{}{section*.7}{}}
+\acronymused{IoT}
+\@writefile{toc}{\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.8}\protected@file@percent }
+\AC@undonewlabel{acro:Deep SVDD}
+\newlabel{acro:Deep SVDD}{{1.0}{1}{Existence of a Research Gap}{section*.9}{}}
+\acronymused{Deep SVDD}
+\abx@aux@cite{0}{monrose1999hardening}
+\abx@aux@segm{0}{0}{monrose1999hardening}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
+\abx@aux@cite{0}{kim2018user}
+\abx@aux@segm{0}{0}{kim2018user}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
+\abx@aux@cite{0}{kiyani2020continuous}
+\abx@aux@segm{0}{0}{kiyani2020continuous}
+\abx@aux@cite{0}{kim2024kdprint}
+\abx@aux@segm{0}{0}{kim2024kdprint}
+\abx@aux@cite{0}{cheon2017homomorphic}
+\abx@aux@segm{0}{0}{cheon2017homomorphic}
+\abx@aux@cite{0}{rahman2021scalable}
+\abx@aux@segm{0}{0}{rahman2021scalable}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
+\abx@aux@cite{0}{johnson1984extensions}
+\abx@aux@segm{0}{0}{johnson1984extensions}
+\abx@aux@cite{0}{wang2014alignment}
+\abx@aux@segm{0}{0}{wang2014alignment}
+\abx@aux@cite{0}{ruff2018deepsvdd}
+\abx@aux@segm{0}{0}{ruff2018deepsvdd}
+\acronymused{JL}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Problem Statement}{2}{subsection.1.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{}{2}{paragraph*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{}{2}{paragraph*.10}\protected@file@percent }
+\AC@undonewlabel{acro:KMT}
+\newlabel{acro:KMT}{{1.1}{2}{}{section*.11}{}}
+\acronymused{KMT}
+\AC@undonewlabel{acro:RNN}
+\newlabel{acro:RNN}{{1.1}{2}{}{section*.12}{}}
+\acronymused{RNN}
+\acronymused{HE}
+\abx@aux@cite{0}{johnson1984extensions}
+\abx@aux@segm{0}{0}{johnson1984extensions}
+\abx@aux@cite{0}{wang2014alignment}
+\abx@aux@segm{0}{0}{wang2014alignment}
+\abx@aux@cite{0}{ruff2018deepsvdd}
+\abx@aux@segm{0}{0}{ruff2018deepsvdd}
+\abx@aux@cite{0}{johnson1984extensions}
+\abx@aux@segm{0}{0}{johnson1984extensions}
+\abx@aux@cite{0}{teoh2006random}
+\abx@aux@segm{0}{0}{teoh2006random}
+\abx@aux@cite{0}{mondal2017continuous}
+\abx@aux@segm{0}{0}{mondal2017continuous}
+\abx@aux@cite{0}{ruff2018deepsvdd}
+\abx@aux@segm{0}{0}{ruff2018deepsvdd}
+\@writefile{toc}{\contentsline {paragraph}{}{3}{paragraph*.13}\protected@file@percent }
+\acronymused{JL}
+\acronymused{Deep SVDD}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Research Aim and Objectives}{3}{subsection.1.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{}{3}{paragraph*.7}\protected@file@percent }
+\acronymused{JL}
+\acronymused{Deep SVDD}
+\@writefile{toc}{\contentsline {paragraph}{}{3}{paragraph*.14}\protected@file@percent }
+\acronymused{JL}
+\acronymused{KMT}
+\acronymused{Deep SVDD}
+\AC@undonewlabel{acro:EER}
+\newlabel{acro:EER}{{4}{3}{}{section*.15}{}}
+\acronymused{EER}
+\abx@aux@cite{0}{rathgeb2011cancelable}
+\abx@aux@segm{0}{0}{rathgeb2011cancelable}
+\abx@aux@cite{0}{teoh2006random}
+\abx@aux@segm{0}{0}{teoh2006random}
+\abx@aux@cite{0}{ruff2018deepsvdd}
+\abx@aux@segm{0}{0}{ruff2018deepsvdd}
+\abx@aux@cite{0}{mondal2017continuous}
+\abx@aux@segm{0}{0}{mondal2017continuous}
+\abx@aux@cite{0}{kim2018user}
+\abx@aux@segm{0}{0}{kim2018user}
+\abx@aux@cite{0}{wang2014alignment}
+\abx@aux@segm{0}{0}{wang2014alignment}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Research Questions}{4}{subsection.1.3}\protected@file@percent }
+\acronymused{JL}
+\acronymused{EER}
+\acronymused{Deep SVDD}
+\acronymused{KMT}
+\acronymused{JL}
+\AC@undonewlabel{acro:DL}
+\newlabel{acro:DL}{{1.3}{4}{Research Questions}{section*.16}{}}
+\acronymused{DL}
 \abx@aux@cite{0}{johnson1984extensions}
 \abx@aux@segm{0}{0}{johnson1984extensions}
 \abx@aux@cite{0}{johnson1984extensions}
@@ -122,22 +211,12 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Multimodal Fusion and Mouse Dynamics}{7}{subsubsection.2.2.2}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Summary of Key Related Studies}}{8}{table.1}\protected@file@percent }
 \newlabel{tab:lit_review_summary}{{1}{8}{Summary of Key Related Studies}{table.1}{}}
-\AC@undonewlabel{acro:EER}
-\newlabel{acro:EER}{{1}{8}{Summary of Key Related Studies}{section*.8}{}}
 \acronymused{EER}
-\AC@undonewlabel{acro:Deep SVDD}
-\newlabel{acro:Deep SVDD}{{1}{8}{Summary of Key Related Studies}{section*.9}{}}
 \acronymused{Deep SVDD}
 \acronymused{Deep SVDD}
 \acronymused{EER}
-\AC@undonewlabel{acro:PIN}
-\newlabel{acro:PIN}{{1}{8}{Summary of Key Related Studies}{section*.10}{}}
 \acronymused{PIN}
-\AC@undonewlabel{acro:HE}
-\newlabel{acro:HE}{{1}{8}{Summary of Key Related Studies}{section*.11}{}}
 \acronymused{HE}
-\AC@undonewlabel{acro:RNN}
-\newlabel{acro:RNN}{{1}{8}{Summary of Key Related Studies}{section*.12}{}}
 \acronymused{RNN}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Deep Learning and Privacy Methodologies}{9}{subsubsection.2.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Research Gap}{9}{subsection.2.3}\protected@file@percent }
@@ -161,17 +240,18 @@
 \abx@aux@cite{0}{dhakal2018136m}
 \abx@aux@segm{0}{0}{dhakal2018136m}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data Collection}{13}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{}{13}{paragraph*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{}{13}{paragraph*.18}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Primary Datasets (Multimodal \& Cross-Device)}{13}{subsubsection.3.2.1}\protected@file@percent }
 \AC@undonewlabel{acro:SU-AIS}
-\newlabel{acro:SU-AIS}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.13}{}}
+\newlabel{acro:SU-AIS}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.19}{}}
 \acronymused{SU-AIS}
 \AC@undonewlabel{acro:BB-MAS}
-\newlabel{acro:BB-MAS}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.14}{}}
+\newlabel{acro:BB-MAS}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.20}{}}
 \acronymused{BB-MAS}
 \AC@undonewlabel{acro:SVDD}
-\newlabel{acro:SVDD}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.15}{}}
+\newlabel{acro:SVDD}{{3.2.1}{13}{Primary Datasets (Multimodal \& Cross-Device)}{section*.21}{}}
 \acronymused{SVDD}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{13}{subsubsection.3.2.2}\protected@file@percent }
 \abx@aux@cite{0}{cmu2009benchmark}
 \abx@aux@segm{0}{0}{cmu2009benchmark}
 \abx@aux@cite{0}{reddy2025mouse}
@@ -186,8 +266,9 @@
 \abx@aux@segm{0}{0}{cmu2009benchmark}
 \abx@aux@cite{0}{reddy2025mouse}
 \abx@aux@segm{0}{0}{reddy2025mouse}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{14}{subsubsection.3.2.2}\protected@file@percent }
 \AC@undonewlabel{acro:CMU}
-\newlabel{acro:CMU}{{3.2.2}{14}{Benchmark Datasets (Scalability \& Standardization)}{section*.16}{}}
+\newlabel{acro:CMU}{{3.2.2}{14}{Benchmark Datasets (Scalability \& Standardization)}{section*.22}{}}
 \acronymused{CMU}
 \acronymused{EER}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Supplementary Data}{14}{subsubsection.3.2.3}\protected@file@percent }
@@ -204,19 +285,47 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Evaluation and Validation}{15}{subsection.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Authentication Performance Metrics}{15}{subsubsection.3.4.1}\protected@file@percent }
 \@writefile{equ}{\contentsline {equations}{\numberline {3}False Acceptance Rate (FAR) Calculation}{15}{equation.3}\protected@file@percent }
-\@writefile{equ}{\contentsline {equations}{\numberline {4}False Rejection Rate (FRR) Calculation}{16}{equation.4}\protected@file@percent }
+\@writefile{equ}{\contentsline {equations}{\numberline {4}False Rejection Rate (FRR) Calculation}{15}{equation.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Privacy and Efficiency Validation}{16}{subsubsection.3.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.0}Anticipated Results/Final Products}{17}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{18}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{REFERENCES}{19}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A}Appendices}{21}{appendix.A}\protected@file@percent }
-\abx@aux@read@bbl@mdfivesum{5A279ECBDDB975472A3BF0A8A65CA465}
+\@writefile{toc}{\contentsline {section}{\numberline {4.0}Anticipated Results / Final Products}{17}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Expected Technical Outcomes}{17}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Scientific Contribution and Contribution to Knowledge}{17}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Novel Contributions}{18}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Final Products}{19}{subsection.4.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.5}Potential Impact and Significance}{19}{subsection.4.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{20}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Project Timeline Overview}{20}{subsection.5.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Official Project Milestones}}{20}{table.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Task Breakdown Structure}{20}{subsection.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.1}{Phase 1: Literature Review and Problem Refinement}}{20}{subsubsection.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.2}{Phase 2: System Design and Feature Engineering}}{20}{subsubsection.5.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.3}{Phase 3: Model Development (Deep SVDD + JL Projection)}}{21}{subsubsection.5.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.4}{Phase 4: Experimental Evaluation and Analysis}}{21}{subsubsection.5.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.2.5}{Phase 5: Documentation and Final Report Writing}}{21}{subsubsection.5.2.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Gantt Chart Representation}{22}{subsection.5.3}\protected@file@percent }
+\gtt@chartextrasize{0}{112.95424pt}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Workload Distribution}{22}{subsection.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Workload Distribution Across Project Phases}}{22}{figure.6}\protected@file@percent }
+\newlabel{fig:piechart}{{6}{22}{Workload Distribution Across Project Phases}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Project Management Strategy}{22}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{REFERENCES}{23}{subsection.5.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Appendices}{25}{appendix.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Appendix A: Experimental Validation of JL Projection with Deep SVDD}{25}{subsection.A.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.1}A.1 Python Implementation}{25}{subsubsection.A.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.2}A.2 Experimental Output}{29}{subsubsection.A.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.1.3}A.3 Interpretation of Results}{30}{subsubsection.A.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Appendix B: Preliminary Feature Quality Validation}{30}{subsection.A.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.1}B.1 Python Implementation (Baseline SVM)}{30}{subsubsection.A.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.2.2}B.2 Experimental Output and Interpretation}{33}{subsubsection.A.2.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Baseline SVM Classification Results for Feature Validation}}{33}{table.4}\protected@file@percent }
+\abx@aux@read@bbl@mdfivesum{1118B4D6A99F2E14F1DC2121F9BAEA96}
 \abx@aux@defaultrefcontext{0}{gaines1980authentication}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{joyce1990identity}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{ahmed2007new}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{shepherd1995continuous}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{mondal2017continuous}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{monrose1999hardening}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{rathgeb2011cancelable}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{kim2018user}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{cheon2017homomorphic}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{rahman2021scalable}{none/global//global/global/global}
@@ -225,9 +334,11 @@
 \abx@aux@defaultrefcontext{0}{ruff2018deepsvdd}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{johnson1984extensions}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{kim2024kdprint}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{wang2014alignment}{none/global//global/global/global}
+\abx@aux@defaultrefcontext{0}{teoh2006random}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{suais2019bbmas}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{edgehill2012dataset}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{dhakal2018136m}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{cmu2009benchmark}{none/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{reddy2025mouse}{none/global//global/global/global}
-\gdef \@abspage@last{29}
+\gdef \@abspage@last{40}

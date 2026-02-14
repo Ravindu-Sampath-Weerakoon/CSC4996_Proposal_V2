@@ -3,3 +3,4 @@
 \contentsline {figure}{\numberline {3}{\ignorespaces Visual Representation of Biometric Features. \textbf {(a)} Keystroke Dynamics: Dwell Time represents the key press duration, while Flight Time measures the latency between distinct keystrokes. \textbf {(b)} Mouse Dynamics: Comparison between the optimal straight-line path and the actual user trajectory, used to calculate movement efficiency and curvature.}}{7}{figure.3}%
 \contentsline {figure}{\numberline {4}{\ignorespaces The Technical Dichotomy in Behavioral Authentication.}}{10}{figure.4}%
 \contentsline {figure}{\numberline {5}{\ignorespaces System Architecture: Keyed-JL Privacy and Server-Side Deep SVDD Detection}}{12}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Workload Distribution Across Project Phases}}{22}{figure.6}%

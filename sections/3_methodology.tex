@@ -1,6 +1,6 @@
 \section[METHODOLOGY AND PROJECT DESIGN]{Methodology and Project Design}
 
-The proposed methodology adopts a quantitative experimental approach to evaluate the performance of privacy-preserving continuous authentication. The research design is centered on the ``Privacy-by-Design'' principle, ensuring that sensitive behavioral templates are never transmitted or stored in an invertible format.
+The proposed methodology follows a quantitative experimental approach to assess the performance of privacy-preserving continuous authentication. The research design is based on the “Privacy-by-Design” principle, which ensures that the behavioral templates are never shared or stored in an invertible form.
 
 \begin{figure}[H]
     \centering
@@ -99,9 +99,9 @@ The methodology follows a structured pipeline: (1) \textbf{Data Acquisition} fro
 
 \subsection{Data Collection}
 
-To ensure the proposed privacy-preserving framework is robust, scalable, and generalizes well to real-world scenarios, this research utilizes a \textbf{Hybrid Multi-Source Dataset} approach. Data is aggregated from five distinct repositories, covering fixed-text, free-text, and multimodal (Keystroke + Mouse) interactions.
+\paragraph{} To make sure that the proposed privacy-preserving framework is robust, scalable, and generalizes well to real-world settings, this research work adopts a \textbf{Hybrid Multi-Source Dataset} approach. The data is aggregated from five different sources, including fixed-text, free-text, and multimodal (Keystroke + Mouse) interactions.
 
-The behavioral features selected—specifically Dwell Time and Flight Time—represent high-quality biomechanical signatures. The validity of these metrics is demonstrated in Appendix B, where a baseline SVM classifier was tested on real-world behavioral data points.
+\paragraph{} The choice of the behavioral features to be extracted—namely, Dwell Time and Flight Time—is based on the fact that these are high-quality biomechanical features. The validity of these features is established in Appendix B, where a baseline SVM classifier is used to classify real-world behavioral data points.
 
 \subsubsection{Primary Datasets (Multimodal \& Cross-Device)}
 The core training and fusion phases utilize datasets offering high-granularity sensor data:
@@ -171,8 +171,6 @@ Mouse Features \cite{reddy2025mouse} & Mouse & Aggregated & Feature Engineering 
 
 \subsection{Ethical Considerations}
 
-In accordance with the research standards for the University of Peradeniya, this study addresses the ethical implications of using human behavioral data for biometric authentication. The research design prioritizes data privacy and the minimization of risks associated with the storage of biometric identifiers.
-
 \subsubsection{Use of Human-Generated Behavioral Data}
 This research utilizes secondary behavioral data consisting of keystroke and mouse interaction logs from five high-impact repositories.
 \begin{itemize}
@@ -193,7 +191,7 @@ During the experimental phase, data integrity is maintained through encrypted st
 
 \subsection{Evaluation and Validation}
 
-To rigorously assess the performance and privacy of the proposed Keyed-JL and Deep SVDD framework, a comprehensive experimental design is employed. This section outlines the quantitative metrics and validation strategies used to measure authentication accuracy and system efficiency.
+In order to properly evaluate the performance and privacy of the proposed Keyed-JL and Deep SVDD framework, a comprehensive experimental design is used. This section describes the quantitative metrics and validation approaches used to evaluate the authentication accuracy and efficiency of the system.
 
 \subsubsection{Authentication Performance Metrics}
 The system's ability to distinguish between a legitimate user and an impostor is evaluated using standard biometric error rates:

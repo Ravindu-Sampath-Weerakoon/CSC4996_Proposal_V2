@@ -1,5 +1,87 @@
-\section{Anticipated Results/Final Products}
+
 
 %Expected results and scientific contribution/contribution to knowledge. Potential impactand significance of the findings.
 
+
+\section{Anticipated Results / Final Products}
+
+\subsection{Expected Technical Outcomes}
+
+The proposed research is expected to yield a new lightweight privacy-preserving behavioral biometric authentication scheme that combines Deep Support Vector Data Description (Deep SVDD) with Keyed Johnson-Lindenstrauss (JL) projections. The technical expected outcomes include:
+
+\begin{itemize}
+    \item \textbf{Privacy-Preserving Template Protection:} Proof of the possibility of transforming behavioral biometric templates using keyed JL projections in such a way that the original behavioral data (keystroke and mouse movements) cannot be reconstructed.
+    
+    \item \textbf{Template Revocability:} Validation that compromised biometric templates can be revoked and re-issued by regenerating projection keys, without requiring users to alter their intrinsic behavioral traits.
+    
+    \item \textbf{Low-Latency Anomaly Detection:} Empirical evidence showing that the Deep SVDD-based one-class classification model enables real-time anomaly detection suitable for continuous authentication on resource-constrained edge devices.
+    
+    \item \textbf{Competitive Recognition Performance:} Achievement of authentication accuracy, False Acceptance Rate (FAR), and False Rejection Rate (FRR) comparable to or better than existing behavioral biometric systems that rely on raw templates.
+    
+    \item \textbf{Reduced Computational Overhead:} Significant reduction in latency and computational cost compared to homomorphic encryption-based privacy-preserving solutions, making the framework practical for deployment in real-world systems.
+\end{itemize}
+
+\subsection{Scientific Contribution and Contribution to Knowledge}
+
+The proposed work is expected to contribute to the scientific community in the following ways:
+
+\begin{itemize}
+    \item \textbf{A Unified Lightweight Framework:} Introduction of a unified architecture that jointly addresses privacy preservation, template revocability, and efficient anomaly detection — a combination currently underexplored in behavioral biometrics research.
+    
+    \item \textbf{Formal Privacy-Utility Trade-off Analysis:} Provision of a systematic evaluation of the trade-off between dimensionality reduction, projection randomness, and authentication accuracy.
+    
+    \item \textbf{Integration of Random Projection Theory with Deep One-Class Learning:} Novel integration of Johnson-Lindenstrauss projections with Deep SVDD for secure biometric template transformation.
+    
+    \item \textbf{Edge-Ready Continuous Authentication Model:} Advancement of research toward deployable, edge-compatible behavioral biometric systems.
+\end{itemize}
+
+\subsection{Novel Contributions}
+
+This research introduces several novel contributions to the field of privacy-preserving behavioral biometrics:
+
+\begin{itemize}
+
+    \item \textbf{Cancelable Multimodal Behavioral Template via Keyed JL Projections:} 
+    In contrast to traditional behavioral biometric systems, which store raw or lightly processed templates, this paper proposes a keyed random projection approach that ensures non-invertibility and revocability of multimodal behavioral features.
+
+    \item \textbf{Integration of Random Projection Theory with Deep One-Class Learning:}
+Although Johnson-Lindenstrauss projections and Deep SVDD have been investigated separately in the literature, a combination of these methods for secure continuous behavioral authentication has not been investigated. This paper fills this gap by providing a single framework that combines dimensionality-preserving random projections with hypersphere-based anomaly detection.
+
+    \item \textbf{Lightweight Alternative to Cryptographic Privacy Mechanisms:}
+The existing solutions for privacy-preserving authentication are highly dependent on homomorphic encryption or secure multi-party computation, which have high computational complexity. This work presents a computationally efficient solution that has a theoretical basis.
+    \item \textbf{Formal Privacy–Latency–Accuracy Trade-off Characterization:}
+    The study provides an empirical and theoretical evaluation of how projection dimension and embedding space affect authentication accuracy, latency, and resistance to feature reconstruction attacks.
+
+    \item \textbf{Edge-Deployable Continuous Authentication Architecture:}
+    The proposed framework is designed specifically for practical deployment on resource-constrained devices, bridging the gap between theoretical privacy guarantees and real-world usability.
+
+\end{itemize}
+
+
+\subsection{Final Products}
+
+The final deliverables of this research are anticipated to include:
+
+\begin{itemize}
+    \item A fully implemented and experimentally validated privacy-preserving behavioral biometric authentication framework.
+    \item A comprehensive experimental evaluation report including performance metrics (accuracy, FAR, FRR, EER), computational cost analysis, and privacy robustness evaluation.
+    \item A publishable conference or journal manuscript detailing the framework, theoretical foundations, and empirical validation.
+    \item Open-source implementation (if permitted) to support reproducibility and further research.
+\end{itemize}
+
+\subsection{Potential Impact and Significance}
+
+The results of this work have the potential to greatly impact the design of future authentication systems. By removing the need for expensive cryptographic computation while still maintaining strong privacy guarantees, this framework could enable:
+
+\begin{itemize}
+    \item Secure continuous authentication in financial systems, healthcare platforms, and remote work environments.
+    \item Deployment on edge devices such as laptops, mobile devices, and IoT endpoints.
+    \item Reduction in identity theft risks associated with centralized storage of raw biometric templates.
+\end{itemize}
+
+Ultimately, this work aims to bridge the gap between privacy-preserving theory and practical real-time authentication, contributing toward more secure and user-friendly digital identity systems.
+
+
 \newpage
+
+
