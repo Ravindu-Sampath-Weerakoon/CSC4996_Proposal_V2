@@ -2374,6 +2374,39 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="2" intorder="1">gaines1980authentication</bcf:citekey>
+    <bcf:citekey order="2" intorder="2">joyce1990identity</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">ahmed2007new</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">shepherd1995continuous</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">mondal2017continuous</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">monrose1999hardening</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">kim2018user</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">cheon2017homomorphic</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">rahman2021scalable</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">kiyani2020continuous</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">zheng2011efficient</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">ruff2018deepsvdd</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">johnson1984extensions</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">johnson1984extensions</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">johnson1984extensions</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">gaines1980authentication</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">joyce1990identity</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">mondal2017continuous</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">kim2018user</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">kim2024kdprint</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">kiyani2020continuous</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">rahman2021scalable</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">joyce1990identity</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">suais2019bbmas</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">edgehill2012dataset</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">dhakal2018136m</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">cmu2009benchmark</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">reddy2025mouse</bcf:citekey>
+    <bcf:citekey order="38" intorder="1">edgehill2012dataset</bcf:citekey>
+    <bcf:citekey order="39" intorder="1">suais2019bbmas</bcf:citekey>
+    <bcf:citekey order="40" intorder="1">dhakal2018136m</bcf:citekey>
+    <bcf:citekey order="41" intorder="1">cmu2009benchmark</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">reddy2025mouse</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

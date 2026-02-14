@@ -1,19 +1,228 @@
 \section[METHODOLOGY AND PROJECT DESIGN]{Methodology and Project Design}
 
-%The proposed methodology and experimental setup. Rationale for chosen methods.
+The proposed methodology adopts a quantitative experimental approach to evaluate the performance of privacy-preserving continuous authentication. The research design is centered on the ``Privacy-by-Design'' principle, ensuring that sensitive behavioral templates are never transmitted or stored in an invertible format.
 
-\subsection{Overview of the Proposed Methodology/Research Design}
+\begin{figure}[H]
+    \centering
+    \resizebox{0.85\textwidth}{!}{%
+    \begin{tikzpicture}[
+        scale=0.75, transform shape,
+        auto,
+        node distance = 1.5cm and 2.8cm,
+        % Styles based on your custom colors
+        input/.style = {rectangle, draw, fill=myblue, text centered, rounded corners, minimum height=1.1cm, minimum width=6cm, font=\small\bfseries},
+        process/.style = {rectangle, draw, fill=myorange, text centered, minimum height=2.2cm, minimum width=6.5cm, align=center, font=\small},
+        privacy/.style = {rectangle, draw, fill=mygreen, text centered, line width=1.6pt, minimum height=3.2cm, minimum width=7.5cm, align=center, font=\small},
+        model/.style = {rectangle, draw, fill=mypurple, text centered, rounded corners, minimum height=2.5cm, minimum width=6.5cm, align=center, font=\small},
+        decision/.style = {diamond, draw, fill=yellow!10, text centered, aspect=2, minimum width=4.2cm, minimum height=1.9cm, font=\small\bfseries},
+        storage/.style = {cylinder, draw, shape border rotate=90, fill=gray!20, minimum height=1.6cm, minimum width=1.6cm, font=\scriptsize, align=center},
+        keynode/.style = {circle, draw, fill=red!15, line width=1.3pt, inner sep=4pt, font=\small\bfseries, align=center},
+        line/.style = {draw, -{Latex[length=3.5mm]}, thick}
+    ]
 
-%The approach/steps of the proposed methodology.
+    % --- Labels ---
+    \node [font=\Large\bfseries, text=blue!80] at (-7, 0.5) {Client Side};
+    \node [font=\Large\bfseries, text=red!80] at (7, -13.5) {Server Side};
+
+    % --- CLIENT SIDE NODES ---
+    \node [input] (raw) {Behavioral Data Streams};
+    \node [below=0.05cm of raw, font=\footnotesize\itshape] {(Keystroke \& Mouse Interaction Logs)};
+
+    \node [process, below=1.8cm of raw] (features) {
+        Local Feature Extraction \& Fusion \\ 
+        \footnotesize $\Delta t_{dwell}, \Delta t_{flight}, \vec{v}, \vec{a}, \text{Curvature}$
+    };
+
+    \node [privacy, below=2cm of features] (privacy) {
+        \textbf{Keyed Privacy Layer} \\ 
+        \small (Non-invertible Transformation) \\
+        \textbf{Keyed JL Projection Matrix} \\
+        \vspace{0.2cm}
+        \footnotesize $R_K \in \mathbb{R}^{k \times d} \quad Z = \frac{1}{\sqrt{k}} R_K X$
+    };
+
+    \node [keynode, left=3cm of privacy] (key) {Secret Key \\ $K$};
+    \node [storage, above=2.5cm of key] (db) {Local \\ Registry};
+
+    % Privacy Barrier
+    \draw [dashed, gray!80, line width=2pt] (-7.5, -9.6) -- (7.5, -9.6) node[right, font=\bfseries] {Privacy Barrier};
+
+    % --- SERVER SIDE NODES ---
+    \node [model, below=4.5cm of privacy] (svdd) {
+        \textbf{Server-Side: Deep SVDD Anomaly Detector} \\ 
+        \small One-Class Hypersphere Boundary \\ 
+        \vspace{0.2cm}
+        \footnotesize (Input: Projected Privacy Embedding $Z$)
+    };
+    
+    \node [decision, below=2.5cm of svdd] (decide) {Anomaly? $\norm{Z - c}^2 > R$};
+
+    \node [rectangle, draw, fill=green!20, left=2.5cm of decide, rounded corners, minimum width=3.2cm, minimum height=1cm] (acc) {Authorized};
+    \node [rectangle, draw, fill=red!20, right=2.5cm of decide, rounded corners, minimum width=3.2cm, minimum height=1cm] (rej) {Blocked};
+
+    % --- CONNECTIONS ---
+    \draw [line] (raw) -- (features);
+    \draw [line] (features) -- node[right, scale=0.8] {Raw Vector ($X$)} (privacy);
+    
+    % Data transmission across barrier
+    \draw [line, blue!70, line width=1.8pt] (privacy) -- node[right, scale=0.8, text=black, align=left] {Projected \\ Embedding ($Z$)} (svdd);
+    
+    \draw [line] (svdd) -- node[right, scale=0.8] {Score} (decide);
+    
+    \draw [line, dashed, red] (key.east) -- node[above, scale=0.75, text=black] {Apply Key $K$} (privacy.west);
+    \draw [line, {Latex}-{Latex}, red, bend left=45] (key) to node[left, scale=0.75, text=black] {Revocation} (db);
+    
+    \draw [line] (decide.west) -- node[above, scale=0.8] {No} (acc.east);
+    \draw [line] (decide.east) -- node[above, scale=0.8] {Yes} (rej.west);
+
+    % Optimization Target
+    \node [below=1.8cm of decide, font=\small\itshape, text=blue!90!black, align=center, draw=blue!20, fill=white, inner sep=6pt, rounded corners] (goal) {
+        \textbf{Optimization Goal:} $\min(k) \text{ s.t. } \text{EER} < \tau$
+    };
+
+    \end{tikzpicture}
+    }
+    \caption{System Architecture: Keyed-JL Privacy and Server-Side Deep SVDD Detection}
+    \label{fig:system_architecture}
+\end{figure}
+
+
+
+
+\subsection{Overview of the Proposed Research Design}
+
+The system architecture is divided into two distinct environments separated by a \textbf{Privacy Barrier}: the \textbf{Client Side}, where data is captured and transformed, and the \textbf{Server Side}, where authentication decisions are made. 
+
+
+The methodology follows a structured pipeline: (1) \textbf{Data Acquisition} from logs, (2) \textbf{Feature Engineering} for multimodal fusion, (3) \textbf{Keyed-JL Transformation} for privacy, and (4) \textbf{Deep SVDD Detection} for real-time authentication.
+
 
 \subsection{Data Collection}
+
+To ensure the proposed privacy-preserving framework is robust, scalable, and generalizes well to real-world scenarios, this research utilizes a \textbf{Hybrid Multi-Source Dataset} approach. Data is aggregated from five distinct repositories, covering fixed-text, free-text, and multimodal (Keystroke + Mouse) interactions.
+
+The behavioral features selected—specifically Dwell Time and Flight Time—represent high-quality biomechanical signatures. The validity of these metrics is demonstrated in Appendix B, where a baseline SVM classifier was tested on real-world behavioral data points.
+
+\subsubsection{Primary Datasets (Multimodal \& Cross-Device)}
+The core training and fusion phases utilize datasets offering high-granularity sensor data:
+
+\begin{itemize}
+    \item \textbf{\ac{SU-AIS} \ac{BB-MAS} \cite{suais2019bbmas}:} 
+    This serves as the primary source for training the \ac{SVDD} model. 
+    \begin{itemize}
+        \item \textbf{Population:} $N = 117$ unique subjects.
+        \item \textbf{Volume:} Approximately 11,760 keystrokes per user (Desktop subset).
+        \item \textbf{Relevance:} Facilitates analysis of behavioral stability across different physical interfaces.
+    \end{itemize}
+
+    \item \textbf{Edge Hill KMT \cite{edgehill2012dataset}:}
+    Critical for the multimodal fusion layer, capturing simultaneous mouse and keyboard interactions.
+    \begin{itemize}
+        \item \textbf{Scenario:} High-security financial form filling context.
+        \item \textbf{Population:} 88 user sessions with 1,760 interaction instances.
+        \item \textbf{Features:} Captures Keystroke, Mouse trajectory, velocity, and click events.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Benchmark Datasets (Scalability \& Standardization)}
+Two benchmark datasets ensure scalability and baseline comparisons:
+
+\begin{itemize}
+    \item \textbf{Aalto University ``136M Keystrokes'' Dataset \cite{dhakal2018136m}:}
+    Used for pre-training feature extractors on general typing patterns.
+    \begin{itemize}
+        \item \textbf{Scale:} Largest available public keystroke dataset ($>136$ million keystrokes).
+        \item \textbf{Population:} Over 168,000 participants.
+        \item \textbf{Type:} Free-text typing collected via web-based tests.
+    \end{itemize}
+
+    \item \textbf{\ac{CMU} Keystroke Dynamics Benchmark \cite{cmu2009benchmark}:}
+    Used as a baseline control group to compare \acp{EER} against existing literature.
+    \begin{itemize}
+        \item \textbf{Population:} 51 subjects.
+        \item \textbf{Type:} Fixed-text password entry.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Supplementary Data}
+\begin{itemize}
+    \item \textbf{Feature Engineered Mouse Data \cite{reddy2025mouse}:}
+    A pre-processed dataset containing engineered features such as trajectory straightness, jitter, and movement efficiency. This is utilized to fine-tune the mouse dynamics anomaly detection module without requiring raw signal processing.
+\end{itemize}
+
+% Summary Table
+\begin{table}[H]
+\centering
+\caption{Summary of Experimental Datasets}
+\label{tab:datasets}
+\small
+\begin{tabularx}{\textwidth}{|l|l|c|X|}
+\hline
+\rowcolor{gray!15} \textbf{Dataset} & \textbf{Modality} & \textbf{Users} & \textbf{Primary Role} \\ \hline
+Edge Hill KMT \cite{edgehill2012dataset} & Key + Mouse & 88 & Multimodal Fusion Training \\ \hline
+\ac{SU-AIS} \ac{BB-MAS} \cite{suais2019bbmas} & Key + Sensors & 117 & \ac{LSTM} Training \\ \hline
+Aalto 136M \cite{dhakal2018136m} & Keystroke & 168k+ & Transfer Learning \\ \hline
+\ac{CMU} Benchmark \cite{cmu2009benchmark} & Keystroke & 51 & Baseline Validation \\ \hline
+Mouse Features \cite{reddy2025mouse} & Mouse & Aggregated & Feature Engineering \\ \hline
+\end{tabularx}
+\end{table}
 
 %Description of data collection and a description of the dataset and properties.
 
 \subsection{Ethical Considerations}
+
+In accordance with the research standards for the University of Peradeniya, this study addresses the ethical implications of using human behavioral data for biometric authentication. The research design prioritizes data privacy and the minimization of risks associated with the storage of biometric identifiers.
+
+\subsubsection{Use of Human-Generated Behavioral Data}
+This research utilizes secondary behavioral data consisting of keystroke and mouse interaction logs from five high-impact repositories.
+\begin{itemize}
+    \item \textbf{Data Nature:} The logs represent biomechanical patterns (dwell times, flight times, and mouse trajectories) rather than sensitive content or personal information.
+    \item \textbf{Non-intrusive Capture:} No keystroke logging of sensitive text is performed; the study focuses solely on temporal characteristics.
+\end{itemize}
+
+\subsubsection{Anonymization and De-identification}
+The datasets employed, such as the Aalto 136M and SU-AIS BB-MAS, have been previously anonymized. 
+\begin{itemize}
+    \item \textbf{Participant Privacy:} Individual data points are mapped to randomized identifiers, precluding the possibility of identity reconstruction.
+    \item \textbf{Privacy-by-Design:} The use of Keyed-JL Projections ensures that biometric templates are mathematically irreversible, providing a second layer of ethical protection against feature recovery attacks.
+\end{itemize}
+
+\subsubsection{Data Storage and Integrity}
+During the experimental phase, data integrity is maintained through encrypted storage protocols. Only projected embeddings are transmitted for server-side processing, adhering to the principle of data minimization.
 %State if human data, user-generated data, or medical/social/personal data is used.
 
 \subsection{Evaluation and Validation}
+
+To rigorously assess the performance and privacy of the proposed Keyed-JL and Deep SVDD framework, a comprehensive experimental design is employed. This section outlines the quantitative metrics and validation strategies used to measure authentication accuracy and system efficiency.
+
+\subsubsection{Authentication Performance Metrics}
+The system's ability to distinguish between a legitimate user and an impostor is evaluated using standard biometric error rates:
+
+\begin{itemize}
+    \item \textbf{False Acceptance Rate (FAR):} Measures the frequency with which the system incorrectly grants access to an unauthorized impostor.
+    \begin{equation}
+        \eqname{False Acceptance Rate (FAR) Calculation}
+        FAR = \frac{FP}{FP + TN} \times 100\%
+    \end{equation}
+    
+    \item \textbf{False Rejection Rate (FRR):} Measures the frequency with which the system incorrectly denies access to the legitimate user.
+    \begin{equation}
+        \eqname{False Rejection Rate (FRR) Calculation}
+        FRR = \frac{FN}{FN + TP} \times 100\%
+    \end{equation}
+    
+    \item \textbf{Equal Error Rate (EER):} The point where $FAR = FRR$. A lower EER indicates higher system robustness.
+\end{itemize}
+
+\subsubsection{Privacy and Efficiency Validation}
+
+
+To validate the privacy-preserving component and real-time viability, the following metrics are analyzed:
+\begin{itemize}
+    \item \textbf{Template Irreversibility:} Testing the mathematical resilience of the JL-transformation against feature recovery attacks.
+    \item \textbf{Revocability:} Ensuring that regenerating the projection matrix $R_K$ creates uncorrelated templates for the same user, satisfying the requirement for cancelable biometrics.
+    \item \textbf{System Latency:} Measuring the total processing time from feature extraction to server-side decision, targeting a sub-200ms threshold.
+\end{itemize}
 %Experimental design, evaluation and validation of the proposed solution. These mayinclude various metrics and equations.
 
 

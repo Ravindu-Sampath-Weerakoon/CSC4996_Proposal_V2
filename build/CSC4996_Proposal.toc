@@ -1,29 +1,50 @@
 \contentsline {section}{PREFACE}{ii}{Doc-Start}%
 \contentsline {section}{TABLE OF CONTENTS}{iii}{Doc-Start}%
-\contentsline {section}{LIST OF FIGURES}{iv}{Doc-Start}%
-\contentsline {section}{LIST OF TABLES}{v}{Doc-Start}%
-\contentsline {section}{LIST OF EQUATIONS}{vi}{Doc-Start}%
-\contentsline {section}{LIST OF ABBREVIATIONS}{vii}{Doc-Start}%
+\contentsline {section}{LIST OF FIGURES}{v}{Doc-Start}%
+\contentsline {section}{LIST OF TABLES}{vi}{Doc-Start}%
+\contentsline {section}{LIST OF EQUATIONS}{vii}{Doc-Start}%
+\contentsline {section}{LIST OF ABBREVIATIONS}{viii}{Doc-Start}%
 \contentsline {section}{\numberline {1.0}INTRODUCTION}{1}{section.1}%
-\contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.1}%
-\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.2}%
-\contentsline {paragraph}{}{1}{paragraph*.3}%
-\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.4}%
+\contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.2}%
+\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.3}%
+\contentsline {paragraph}{}{1}{paragraph*.4}%
+\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.5}%
 \contentsline {subsection}{\numberline {1.1}Problem Statement}{2}{subsection.1.1}%
-\contentsline {paragraph}{}{2}{paragraph*.5}%
 \contentsline {paragraph}{}{2}{paragraph*.6}%
-\contentsline {subsection}{\numberline {1.2}Research Aim and Objectives}{2}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Research Questions}{2}{subsection.1.3}%
-\contentsline {section}{\numberline {2.0}BACKGROUND}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Theoretical and Technical Background}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Literature Review}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Research Gap}{3}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Assumptions and Constraints}{3}{subsection.2.4}%
-\contentsline {section}{\numberline {3.0}METHODOLOGY AND PROJECT DESIGN}{4}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Overview of the Proposed Methodology/Research Design}{4}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Data Collection}{4}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Ethical Considerations}{4}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Evaluation and Validation}{4}{subsection.3.4}%
-\contentsline {section}{\numberline {4.0}ANTICIPATED RESULTS/FINAL PRODUCTS}{5}{section.4}%
-\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{6}{section.5}%
-\contentsline {section}{\numberline {A}Appendices}{7}{appendix.A}%
+\contentsline {subsection}{\numberline {1.2}Research Aim and Objectives}{3}{subsection.1.2}%
+\contentsline {paragraph}{}{3}{paragraph*.7}%
+\contentsline {subsection}{\numberline {1.3}Research Questions}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {2.0}BACKGROUND}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Theoretical and Technical Background}{5}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}The Johnson-Lindenstrauss (JL) Lemma}{5}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Deep Support Vector Data Description (Deep SVDD)}{6}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Multimodal Behavioral Fusion}{6}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Literature Review}{7}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Foundational Keystroke Dynamics}{7}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Multimodal Fusion and Mouse Dynamics}{7}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Deep Learning and Privacy Methodologies}{9}{subsubsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.3}Research Gap}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Technical Dichotomy: Privacy vs. Performance}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Vulnerability of Static Biometric Templates}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Limitations of Unimodal Authentication}{9}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Gap Definition}{10}{subsubsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.4}Assumptions and Constraints}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Assumptions}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Constraints and Limitations}{11}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3.0}METHODOLOGY AND PROJECT DESIGN}{12}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Overview of the Proposed Research Design}{12}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Data Collection}{13}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Primary Datasets (Multimodal \& Cross-Device)}{13}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{13}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Supplementary Data}{14}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Ethical Considerations}{14}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Use of Human-Generated Behavioral Data}{14}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Anonymization and De-identification}{15}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}Data Storage and Integrity}{15}{subsubsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.4}Evaluation and Validation}{15}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Authentication Performance Metrics}{15}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Privacy and Efficiency Validation}{16}{subsubsection.3.4.2}%
+\contentsline {section}{\numberline {4.0}Anticipated Results/Final Products}{17}{section.4}%
+\contentsline {section}{\numberline {5.0}PROJECT SCHEDULE}{18}{section.5}%
+\contentsline {section}{REFERENCES}{19}{section.5}%
+\contentsline {section}{\numberline {A}Appendices}{21}{appendix.A}%

@@ -5,18 +5,385 @@
 
 \subsection{Theoretical and Technical Background}
 
-%Briefly introduce the theoretical foundations, core concepts, and technical principlesunderlying the proposed research, including relevant models, algorithms, systemarchitectures, and mathematical formulations necessary to understand the problem andthe proposed approach.
+The proposed research integrates concepts from high-dimensional geometry, privacy-preserving machine learning, and multimodal behavioral biometrics. This section outlines the mathematical and architectural foundations required to understand the Keyed-JL and Deep SVDD framework.
+
+\subsubsection{The Johnson-Lindenstrauss (JL) Lemma}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tikzpicture}[scale=1.0, >=Latex]
+
+    % --- LEFT: HIGH-DIMENSIONAL SPACE (3D CUBE) ---
+    \begin{scope}[xshift=0cm]
+        % Draw back face
+        \draw[gray, dashed] (1,1) -- (3,1) -- (3,3) -- (1,3) -- cycle;
+        % Draw edges connecting front and back
+        \draw[gray, dashed] (0,0) -- (1,1);
+        \draw[gray, dashed] (2,0) -- (3,1);
+        \draw[gray] (0,2) -- (1,3);
+        \draw[gray] (2,2) -- (3,3);
+        % Draw front face
+        \draw[thick, black] (0,0) -- (2,0) -- (2,2) -- (0,2) -- cycle;
+        
+        % Data Points
+        \coordinate (h1) at (0.5, 0.5);
+        \coordinate (h2) at (1.5, 1.8);
+        \coordinate (h3) at (2.2, 2.5);
+        
+        \fill[blue] (h1) circle (2pt) node[below right, scale=0.7] {$x_1$};
+        \fill[blue] (h2) circle (2pt) node[above left, scale=0.7] {$x_2$};
+        \fill[blue] (h3) circle (2pt) node[right, scale=0.7] {$x_3$};
+        
+        % Distance line
+        \draw[blue, dotted, thick] (h1) -- (h2);
+        
+        % Label
+        \node[align=center] at (1.5, -0.8) {\textbf{High-Dimensional Space}\\ (Raw Data $R^d$)};
+    \end{scope}
+
+    % --- PROJECTION ARROW ---
+    \draw[->, thick, dashed, orange] (2.8, 1.5) -- (5.8, 1.5) node[midway, above, text=black, scale=0.8] {Projection $R \times x$};
+
+    % --- RIGHT: PROJECTED SUBSPACE (2D PLANE) ---
+    \begin{scope}[xshift=6.5cm, yshift=0.5cm]
+        % Draw 2D Plane
+        \fill[green!10] (0,0) -- (3,0) -- (4,2) -- (1,2) -- cycle;
+        \draw[thick, green!50!black] (0,0) -- (3,0) -- (4,2) -- (1,2) -- cycle;
+        
+        % Mapped Points
+        \coordinate (p1) at (1.0, 0.5);
+        \coordinate (p2) at (2.0, 1.3);
+        \coordinate (p3) at (2.8, 1.6);
+        
+        \fill[red] (p1) circle (2pt) node[below right, scale=0.7] {$f(x_1)$};
+        \fill[red] (p2) circle (2pt) node[above left, scale=0.7] {$f(x_2)$};
+        \fill[red] (p3) circle (2pt) node[right, scale=0.7] {$f(x_3)$};
+        
+        % Distance line
+        \draw[red, dotted, thick] (p1) -- (p2);
+        
+        % Label
+        \node[align=center] at (2.0, -1.3) {\textbf{Projected Subspace}\\ (Compressed $R^k$)};
+    \end{scope}
+
+    % --- Connecting Lines ---
+    \draw[gray!50, dashed, thin] (h1) to[out=20, in=160] (p1);
+    \draw[gray!50, dashed, thin] (h2) to[out=20, in=160] (p2);
+    \draw[gray!50, dashed, thin] (h3) to[out=20, in=160] (p3);
+    
+    % --- GUARANTEE BOX ---
+    \node[align=center, scale=0.9, fill=white, draw=gray, thin, rounded corners] at (5.5, -2.5) {
+        \textbf{\ac{JL} Lemma Guarantee:} \\
+        $||f(x_1) - f(x_2)|| \approx ||x_1 - x_2||$
+    };
+
+    \end{tikzpicture}
+    }
+    \caption{Conceptual Visualization of the \ac{JL} Lemma \cite{johnson1984extensions}. Points from a high-dimensional feature space (Left) are projected onto a lower-dimensional subspace (Right). The blue and red dotted lines illustrate that the relative Euclidean distances between points are approximately preserved despite the massive reduction in dimensions.}
+    \label{fig:jl_projection_concept}
+\end{figure}
+
+The foundational principle for the privacy-preserving component of this research is the Johnson-Lindenstrauss Lemma. The lemma states that a set of $n$ points in a high-dimensional space can be projected into a lower-dimensional space of dimension $k$ while nearly preserving the pairwise distances between all points. 
+
+For any $0 < \epsilon < 1$, there exists a linear mapping $f: \mathbb{R}^d \rightarrow \mathbb{R}^k$ such that for all $u, v \in X$:
+\begin{equation}
+    \eqname{Johnson-Lindenstrauss Distance Preservation Constraint}
+    (1-\epsilon)\|u-v\|^2 \leq \|f(u)-f(v)\|^2 \leq (1+\epsilon)\|u-v\|^2
+    \label{eq:jl_lemma}
+\end{equation}
+\textit{Where $\epsilon$ represents the error tolerance and $f$ is the projection mapping.} 
+
+In this research, the projection matrix is generated using a secret key, ensuring that the transformation is non-invertible and providing revocability.
+
+\subsubsection{Deep Support Vector Data Description (Deep SVDD)}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.2]
+        % --- Define Styles ---
+        \tikzstyle{genuine}=[circle, fill=blue!70, inner sep=1.5pt]
+        \tikzstyle{imposter}=[regular polygon, regular polygon sides=3, fill=red!70, inner sep=1.2pt, rotate=0]
+
+        % --- The Hypersphere (Decision Boundary) ---
+        \draw[thick, blue!80!black, fill=blue!5] (0,0) circle (2.5cm);
+        \node[blue!80!black] at (0, 2.7) {\textbf{Learned Boundary (Hypersphere)}};
+
+        % --- Center Point ---
+        \fill[black] (0,0) circle (2pt) node[below right] {Center $c$};
+
+        % --- Radius Arrow ---
+        \draw[->, thick, black] (0,0) -- (1.76, 1.76) node[midway, above, sloped] {Radius $R$};
+
+        % --- Genuine User Data (Inside) ---
+        % Randomly distributed blue dots near the center
+        \foreach \x/\y in {
+            0.2/0.5, -0.3/0.8, 0.8/-0.2, -0.5/-0.5, 1.2/0.3,
+            -1.0/0.4, 0.1/-1.2, 0.5/1.1, -0.8/-0.8, 1.5/-0.5,
+            -0.2/1.5, 0.9/0.9, -1.2/-0.2, 0.4/-0.4, -0.1/0.1,
+            0.6/-0.9, -0.6/0.6, 1.1/1.1, -1.4/0.5, 0.0/-1.5
+        } {
+            \node[genuine] at (\x, \y) {};
+        }
+        % Label for Genuine
+        \node[blue!80!black, align=center] at (0, -0.5) {\small Genuine User\\ \small (Normal)};
+
+        % --- Imposter Data (Outside) ---
+        % Randomly distributed red triangles outside the circle
+        \foreach \x/\y in {
+            3.0/0.5, -3.2/1.2, 2.8/-2.0, -2.5/-2.5, 0.0/3.2,
+            -3.5/0.0, 3.2/-0.5, 1.5/3.0, -1.0/-3.2, 2.2/2.2,
+            -2.8/1.5, 3.1/-1.5, -2.0/2.8, 1.0/-3.0, -0.5/3.5
+        } {
+            \node[imposter] at (\x, \y) {};
+        }
+        % Label for Imposter
+        \node[red!80!black, align=center] at (3.5, 0) {\small Imposter\\ \small (Anomaly)};
+        \draw[->, red, thin] (3.0, 0.2) -- (2.6, 0.1); % Small pointer
+
+        % --- Explanatory Labels ---
+        \node[align=center, anchor=north] at (0, -2.8) {
+            \textit{Objective:} Minimize $R^2 + \frac{1}{\nu} \sum \xi_i$ \\
+            \footnotesize (Enclose genuine points, reject anomalies)
+        };
+
+    \end{tikzpicture}
+    \caption{Visualizing the Deep SVDD Decision Boundary. The model learns a compact hypersphere of radius $R$ around center $c$ that encapsulates the majority of legitimate user data (blue dots). Any input falling outside this boundary is flagged as an anomaly (red triangles), representing a potential impostor.}
+    \label{fig:deep_svdd_concept}
+\end{figure}
+
+The authentication engine utilizes Deep SVDD, an unsupervised method for one-class classification. It maps legitimate user features into a minimum-volume hypersphere in a latent space. 
+
+
+
+The objective function minimizes the distance of the network outputs to the center $c$ of the hypersphere:
+\begin{equation}
+    \eqname{Deep SVDD Objective Function}
+    \min_{\mathcal{W}} \sum_{i=1}^{n} \|\phi(x_i; \mathcal{W}) - c\|^2 + \lambda \|\mathcal{W}\|_F^2
+    \label{eq:deep_svdd}
+\end{equation}
+\textit{Where $\phi(x_i; \mathcal{W})$ is the neural network mapping, $c$ is the hypersphere center, and $\lambda \|\mathcal{W}\|_F^2$ is the weight decay regularization term.}
+
+\subsubsection{Multimodal Behavioral Fusion}
+The system architecture relies on the fusion of keystroke timing and mouse movement patterns. This multimodal approach increases the entropy of the biometric profile, compensating for the information loss during privacy-preserving projection. 
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\textwidth}{!}{%
+    \begin{tikzpicture}[
+        node distance=1cm,
+        >=Latex,
+        font=\small
+    ]
+
+    % --- PANEL A: KEYSTROKE DYNAMICS ---
+    \begin{scope}[local bounding box=PanelA]
+        % Title
+        \node[anchor=center] at (3.5, 2.5) {\textbf{(a) Keystroke Dynamics Timeline}};
+
+        % Time Axis
+        \draw[->, thick] (0,0) -- (7.5,0) node[right] {Time ($t$)};
+
+        % Key T Events
+        \draw[fill=blue!20, draw=blue!80] (0.5,0) rectangle (2.0, 0.6) node[midway] {Key 'T'};
+        \node[below] at (0.5,0) {$t_{down}$};
+        \node[below] at (2.0,0) {$t_{up}$};
+
+        % Key H Events
+        \draw[fill=blue!20, draw=blue!80] (4.5,0) rectangle (6.0, 0.6) node[midway] {Key 'H'};
+        \node[below] at (4.5,0) {$t_{down}$};
+        \node[below] at (6.0,0) {$t_{up}$};
+
+        % Dwell Time Annotation (Curly Brace)
+        \draw[decorate, decoration={brace, amplitude=5pt, mirror}, thick, red] 
+            (0.5,-0.5) -- (2.0,-0.5) node[midway, below=5pt, red] {\textbf{Dwell Time}};
+
+        % Flight Time Annotation (Arrow)
+        \draw[<->, thick, blue] (2.0, 0.3) -- (4.5, 0.3) node[midway, above, blue] {\textbf{Flight Time}};
+        \draw[dashed, blue] (2.0, 0) -- (2.0, 0.3);
+        \draw[dashed, blue] (4.5, 0) -- (4.5, 0.3);
+    \end{scope}
+
+    % --- PANEL B: MOUSE DYNAMICS ---
+    \begin{scope}[xshift=8.5cm, local bounding box=PanelB]
+        % Title
+        \node[anchor=center] at (2.5, 2.5) {\textbf{(b) Mouse Trajectory Efficiency}};
+
+        % Grid / Context
+        \draw[step=0.5cm, gray!20, very thin] (0,0) grid (5,2);
+        
+        % Points
+        \node[circle, fill=green!60!black, inner sep=2pt, label=left:Start] (A) at (0.5, 0.5) {};
+        \node[circle, fill=red!60!black, inner sep=2pt, label=right:Target] (B) at (4.5, 2.0) {};
+
+        % Optimal Path (Straight)
+        \draw[dashed, thick, black] (A) -- (B) node[midway, above left, sloped, scale=0.8] {Optimal Path};
+
+        % Actual Path (Curved)
+        \draw[thick, blue] (A) .. controls (1.5, -0.5) and (3.5, 0.5) .. (B) 
+            node[midway, below right, sloped, scale=0.8, text=blue] {Actual Path};
+
+        % Curvature/Efficiency Area
+        \draw[<->, red] (2.5, 1.25) -- (2.3, 0.2) node[midway, right, scale=0.7] {Deviation};
+        
+        \node[align=center, text=red!80!black, scale=0.8] at (2.5, -0.8) {\textit{Movement Efficiency} $\propto \frac{\text{Optimal}}{\text{Actual}}$};
+    \end{scope}
+
+    % --- Separator Line ---
+    \draw[gray, thick, dashed] (7.75, -1) -- (7.75, 3);
+
+    \end{tikzpicture}
+    }
+    \caption{Visual Representation of Biometric Features. \textbf{(a)} Keystroke Dynamics: Dwell Time represents the key press duration, while Flight Time measures the latency between distinct keystrokes. \textbf{(b)} Mouse Dynamics: Comparison between the optimal straight-line path and the actual user trajectory, used to calculate movement efficiency and curvature.}
+    \label{fig:biometric_features}
+\end{figure}
+
+
 
 \subsection{Literature Review}
+
+The evolution of behavioral authentication has transitioned from simple timing analysis to complex multimodal deep learning frameworks. This section categorizes previous research into key subdomains applicable to the proposed Keyed-JL and Deep SVDD framework.
+
+\begin{table}[http] 
+    \centering
+    \caption{Summary of Key Related Studies}
+    \label{tab:lit_review_summary}
+    \renewcommand{\arraystretch}{1.5} 
+    \begin{tabular}{|p{0.2\textwidth}|p{0.37\textwidth}|p{0.37\textwidth}|}
+        \hline
+        \textbf{Reference \& Study} & \textbf{Key Contribution to This Project} & \textbf{Identified Gap / Limitation} \\
+        \hline
+        Gaines et al. (1980) \cite{gaines1980authentication} \& Joyce et al. (1990) \cite{joyce1990identity} & 
+        \textbf{Foundational Theory:} Established that typing rhythms (dwell/flight time) are unique and stable enough for identity verification. & 
+        Relied on static, fixed-text passwords, which are insufficient for continuous authentication. \\
+        \hline
+        Mondal \& Bours (2017) \cite{mondal2017continuous} & 
+        \textbf{Multimodal Fusion:} Proved that combining Keystroke and Mouse dynamics significantly reduces \ac{EER} compared to single modalities. & 
+        Fusion was achieved by simply concatenating features, creating a high-dimensional vector that slows down real-time processing. \\
+        \hline
+        Kim et al. (2018) \cite{kim2018user} & 
+        \textbf{Feature Engineering:} Introduced ``user-adaptive'' features, showing that personalized feature selection improves accuracy. & 
+        Focused entirely on accuracy; lacked any ``template protection'' or encryption to secure the stored data. \\
+        \hline
+        \textbf{Kim et al. (2024)} \cite{kim2024kdprint} & 
+        \textbf{\ac{Deep SVDD} Validation:} Demonstrated that \ac{Deep SVDD} outperforms traditional models (6.7\% \ac{EER}) by encoding time-series data into images. & 
+        Restricted to \textit{mobile \acp{PIN}} (touch interactions) and lacked cryptographic encryption (\ac{HE}) or multimodal fusion (Mouse). \\
+        \hline
+        Kiyani et al. (2020) \cite{kiyani2020continuous} & 
+        \textbf{Continuous Authentication:} Validated the use of \acp{RNN} for verifying users continuously, not just at login. & 
+        Did not address the high latency introduced when trying to add encryption to these continuous streams. \\
+        \hline
+        Rahman et al. (2021) \cite{rahman2021scalable} & 
+        \textbf{Scalability Metrics:} Provided a framework for measuring how error rates grow as the user database size increases. & 
+        Addressed scalability of accuracy but not the scalability of privacy (how to store millions of secure templates). \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+\subsubsection{Foundational Keystroke Dynamics}
+Early research established the feasibility of using typing patterns as a biometric. Foundational studies by Gaines et al. identified that keystroke timing—specifically dwell times and flight times—is unique to individuals. While initial systems focused on static login verification \cite{joyce1990identity}, subsequent work by Shepherd introduced continuous authentication, allowing for persistent session monitoring. Monrose and Rubin further demonstrated the utility of these patterns in hardening traditional password-based security.
+
+\subsubsection{Multimodal Fusion and Mouse Dynamics}
+To improve recognition robustness, researchers integrated mouse dynamics and fusion techniques. Ahmed and Traore proved that mouse movement trajectories and click frequencies provide a distinct behavioral signature. Mondal and Bours showed that a multimodal approach, fusing keystroke and mouse data, significantly improves the Equal Error Rate (EER) over unimodal systems. Recent datasets, such as those by Reddy, emphasize feature-engineered mouse dynamics for anomaly detection.
+
+\subsubsection{Deep Learning and Privacy Methodologies}
+Modern research utilizes deep learning but highlights growing privacy concerns. High-accuracy models using Recurrent Neural Networks (RNN) and Bayesian neural networks have become standard for behavior modeling. However, as shown by Kim et al. in the KDPrint framework, encoding behavioral data into standardized images can leave templates vulnerable if not properly secured. While Homomorphic Encryption (HE) offers a mathematical solution for privacy, its latency often exceeds the requirements for continuous monitoring. This research addresses this gap by combining the privacy of Keyed-JL projections with the efficiency of Deep SVDD.
 
 %Related literature and previous research work categorized by subdomains/topicsapplicable to your research. Summarize and compare related studies, existing methods,datasets, evaluations, findings
 
 
 \subsection{Research Gap}
+Despite advancements in behavioral biometrics, a critical gap exists in providing simultaneous mathematical privacy, low latency, and template revocability.
+
+\subsubsection{Technical Dichotomy: Privacy vs. Performance}
+
+A significant gap exists between high-accuracy Deep Learning models and privacy-preserving cryptographic methods. Standard models often store reversible templates, while Homomorphic Encryption introduces prohibitive latencies (often $>1.5$s) that are unsuitable for continuous monitoring on edge devices.
+
+
+
+\subsubsection{Vulnerability of Static Biometric Templates}
+Current literature lacks a standardized mechanism for ``cancelable'' behavioral biometrics. Unlike traditional credentials, behavioral patterns are immutable; if a stored template is compromised, the user's digital identity is permanently at risk because existing systems do not offer a lightweight way to re-issue a new, uncorrelated behavioral profile.
+
+\subsubsection{Limitations of Unimodal Authentication}
+Most privacy-preserving transformations result in some degree of information loss. Existing unimodal research (keystroke only or mouse only) often fails to maintain high recognition accuracy when aggressive dimensionality reduction is applied. There is a gap in research exploring how multimodal fusion can specifically compensate for the entropy loss caused by privacy-preserving projections.
+
+\subsubsection{Gap Definition}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{0.7\textwidth}{!}{%  <-- This reduces it to 70% of the text width
+    \begin{tikzpicture}
+    \begin{polaraxis}[
+        width=10cm, % Keep this at 10cm internal units
+        at={(0,0)},
+        anchor=center,
+        xmin=0, xmax=360,
+        ymin=0, ymax=10,
+        xtick={0, 120, 240},
+        xticklabels={
+            \textbf{Privacy} \\ (Irreversibility),
+            \textbf{Performance} \\ (Low Latency),
+            \textbf{Revocability} \\ (Cancelable)
+        },
+        ytick={2,4,6,8,10},
+        yticklabels={}, 
+        grid=both,
+        major grid style={gray!30},
+        ticklabel style={align=center, font=\small},
+    ]
+
+    % Standard DL
+    \addplot[thick, blue, fill=blue, fill opacity=0.1] coordinates {
+        (0,2) (120,9) (240,1)
+    } -- cycle;
+    \addlegendentry{Standard DL (RNN/CNN)}
+
+    % HE
+    \addplot[thick, red, fill=red, fill opacity=0.1] coordinates {
+        (0,9) (120,2) (240,4)
+    } -- cycle;
+    \addlegendentry{Cryptographic (HE)}
+
+    % Proposed Keyed-JL
+    \addplot[ultra thick, green!60!black, dashed, fill=green!20, fill opacity=0.3] coordinates {
+        (0,8) (120,8) (240,9)
+    } -- cycle;
+    \addlegendentry{\textbf{Proposed Keyed-JL}}
+
+    \end{polaraxis}
+    \end{tikzpicture}
+    } % <-- Close resizebox
+    \caption{The Technical Dichotomy in Behavioral Authentication.}
+    \label{fig:gap_dichotomy}
+\end{figure}
+
+The research gap is formally defined as the lack of a unified behavioral authentication framework that provides \textbf{provable non-invertibility} without sacrificing the \textbf{sub-second latency} required for continuous monitoring. While existing studies achieve high accuracy using Deep Learning, they fail to provide a mechanism for template revocability, meaning a compromised biometric profile is permanently lost. Conversely, cryptographic methods that provide privacy are too computationally expensive for real-time use on standard hardware.
 
 %A clear identification of the research gap within previous research (Formally define andjustify the gap). The research gap is the missing or insufficiently studiedarea/methodology/algorithm found in existing research that the current study aims toinvestigate.
 
 \subsection{Assumptions and Constraints}
+
+This section outlines the foundational assumptions made during the research design and the technical constraints that bound the scope of the proposed privacy-preserving behavioral authentication system.
+
+\subsubsection{Assumptions}
+The validity of the experimental results and the effectiveness of the framework rely on several key assumptions:
+\begin{itemize}
+    \item \textbf{Consistency of User Behavior:} It is assumed that the primary user's typing and mouse usage patterns remain relatively stable over the duration of the study.
+    \item \textbf{Integrity of Enrollment:} The research assumes the initial enrollment occurs in a secure environment, ensuring the Deep SVDD model is trained on verified legitimate data.
+    \item \textbf{Security of the Secret Key:} The mathematical irreversibility of the JL-projection relies on the secret key being stored securely on the client side.
+    \item \textbf{Hardware Sufficiency:} It is assumed that the target hardware can perform the linear JL-projections and inference within the required latency bounds.
+\end{itemize}
+
+\subsubsection{Constraints and Limitations}
+The study is conducted within the following constraints:
+\begin{itemize}
+    \item \textbf{Modality Limitation:} The system is restricted to desktop inputs (keyboard and mouse) and does not include mobile-specific biometrics.
+    \item \textbf{Data Availability:} Evaluation is limited to the diversity and volume of data present in selected benchmark datasets.
+    \item \textbf{Latency vs. Privacy Bound:} A critical constraint is the trade-off between projection dimension $k$ and system performance, targeting a real-time latency of $<200$ms.
+    \item \textbf{Environmental Noise:} Variations in hardware peripherals may introduce noise, potentially affecting the overall Equal Error Rate (EER).
+\end{itemize}
 
 %Assumption in your research work and the identified constraints and limitations. Discusshow these may affect the outcomes
 

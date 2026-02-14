@@ -21,14 +21,17 @@
 \usepackage{array}         % For advanced column formatting
 \usepackage{tabularx}      % For adjustable-width columns
 \usepackage{longtable}     % For tables that span multiple pages
-\usepackage{xltabular}     % Hybrid of longtable and tabularx (The Gold Standard)
-\usepackage{ragged2e}      % For better text wrapping (\raggedright in tables)
+\usepackage{xltabular}     % Hybrid of longtable and tabularx
+\usepackage{ragged2e}      % For better text wrapping (\RaggedRight)
 \usepackage{multirow}      % Useful for complex headers
 
 % --- Graphics & Visualization ---
 \usepackage{graphicx}
 \usepackage{float}         % For [H] placement option
 \usepackage{tikz}          % For drawing system architecture diagrams
+\usepackage{pgfplots}      % For Radar/Spider Charts
+\pgfplotsset{compat=1.18}
+\usepgfplotslibrary{polar} % REQUIRED for the Radar Chart
 \usepackage{pgfgantt}      % For Project Schedule (Gantt Chart)
 
 \usepackage{microtype}     % Magically fixes small overfull hbox warnings
@@ -47,6 +50,9 @@
     decorations.pathmorphing
 }
 
+\usepackage{tikz}
+\usepackage{amsmath}
+
 % --- Code Listings ---
 \usepackage{listings}
 \lstset{
@@ -63,6 +69,8 @@
 % --- Math & Citations ---
 \usepackage{amsmath}              % Required for math and equations
 \usepackage{amssymb}              % Additional math symbols
+\usepackage{bm}                   % For bold math vectors
+\usepackage{physics}              % For clean vector/norm notation (e.g. \norm{v})
 \usepackage[style=ieee, backend=biber]{biblatex} % IEEE Citation Style
 \addbibresource{references.bib}   % Link your bibliography file
 
@@ -74,90 +82,78 @@
 % 2. CUSTOM STYLING & FORMATTING
 % =========================================================
 
-% --- A. Warning Suppression (Cleaner Logs) ---
-% Silences "Overfull \hbox" warnings less than 20pt (invisible to eye)
+% --- A. Warning Suppression ---
 \hfuzz=20pt 
-% Silences "Underfull \hbox" warnings (stretched spacing)
 \hbadness=10000 
 
-% --- B. Table of Contents Styling ---
+% --- B. Custom Diagram Colors ---
+\definecolor{myblue}{RGB}{232, 241, 250}
+\definecolor{myorange}{RGB}{255, 247, 230}
+\definecolor{mygreen}{RGB}{235, 250, 235}
+\definecolor{mypurple}{RGB}{243, 235, 250}
+
+% --- C. Table of Contents Styling ---
 \makeatletter
 \renewcommand{\@dotsep}{2} 
 \makeatother
-
 \renewcommand{\cftsecdotsep}{\cftdotsep} 
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} 
 \renewcommand{\cftsecfont}{\bfseries} 
 \renewcommand{\cftsecpagefont}{\bfseries}
 
-% --- C. Section Numbering & Spacing ---
-% Space between Section number "1.0" and title "Introduction"
+% --- D. Section Numbering & Spacing ---
 \setlength{\cftsecnumwidth}{3.0em} 
+\setlength{\cftbeforesecskip}{1.0em}
+\setlength{\cftbeforesubsecskip}{0.4em} 
 
-% Vertical space between Section (1.0) and Subsection (1.1)
-\setlength{\cftbeforesecskip}{1.0em}    % Space above "1.0 Introduction"
-\setlength{\cftbeforesubsecskip}{0.4em} % Space above "1.1 Problem Statement"
-
-% Indentation for Subsections
 \setlength{\cftsecindent}{0pt}
 \setlength{\cftsubsecindent}{3.0em} 
 \renewcommand{\cftsubsecfont}{\normalfont}
 
-% --- D. Section Font Sizes (16pt/14pt) ---
+% --- E. Section Font Sizes ---
 \titleformat{\section}
   {\normalfont\fontsize{16pt}{20pt}\bfseries}{\thesection}{1em}{}
-
 \titleformat{\subsection}
   {\normalfont\fontsize{14pt}{18pt}\bfseries}{\thesubsection}{1em}{}
 
-% --- E. Custom Numbering (1.0, 2.0) ---
+% --- F. Custom Numbering (1.0, 2.0) ---
 \renewcommand{\thesection}{\arabic{section}.0}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 
-% --- F. List of Equations Setup ---
+% --- G. List of Equations Setup ---
 \newcommand{\listequationsname}{List of Equations}
 \newlistof{equations}{equ}{\listequationsname}
-
-% Command to use INSIDE equation blocks: \eqname{Title}
 \newcommand{\eqname}[1]{%
     \addcontentsline{equ}{equations}{\protect\numberline{\theequation}#1}%
 }
-
-% Style the list to match TOC indentation
 \setlength{\cftequationsnumwidth}{2.5em} 
 \setlength{\cftequationsindent}{1.5em}   
 
-% --- G. Table Fixes ---
 \raggedbottom 
-\setlength{\tabcolsep}{6pt} % Default table padding
+\setlength{\tabcolsep}{6pt}
 
 % =========================================================
 % 3. DOCUMENT CONTENT
 % =========================================================
 \begin{document}
 
-% --- PART 1: FRONT MATTER (Roman Numerals) ---
 \pagenumbering{roman} 
 \setcounter{page}{1}
 
-% Page i: Title Page
 \input{titlepage} 
 \clearpage
 
-% Pages ii - vii: Standard Front Matter
-\input{frontmatter/preface.tex}          % Page ii
-\input{frontmatter/tableofcontents.tex}  % Page iii
-\input{frontmatter/listoffigures.tex}    % Page iv
-\input{frontmatter/listoftables.tex}     % Page v
-\input{frontmatter/listofequations.tex}  % Page vi
-\input{frontmatter/abbreviations.tex}    % Page vii
+\input{frontmatter/preface.tex}
+\input{frontmatter/tableofcontents.tex}
+\input{frontmatter/listoffigures.tex}
+\input{frontmatter/listoftables.tex}
+\input{frontmatter/listofequations.tex}
+\input{frontmatter/abbreviations.tex}
 
-% --- PART 2: MAIN CONTENT (Arabic Numerals) ---
 \clearpage
 \pagenumbering{arabic}
 \setcounter{page}{1} 
 
-% University Standard Spacing (1.5)
 \onehalfspacing 
 
 \input{sections/1_introduction} 
@@ -166,10 +162,8 @@
 \input{sections/4_results}      
 \input{sections/5_project_schedule} 
 
-% --- PART 3: REFERENCES & APPENDICES ---
 \clearpage
 
-% References Header Styling
 \defbibheading{upperbib}{%
     \section*{References} 
     \addcontentsline{toc}{section}{REFERENCES} 
@@ -177,8 +171,7 @@
 \printbibliography[heading=upperbib]
 
 \newpage
-% Appendices
-\appendix % Switch to Appendix numbering (A, B, C...)
+\appendix 
 \input{sections/appendices}
 
 \end{document}
