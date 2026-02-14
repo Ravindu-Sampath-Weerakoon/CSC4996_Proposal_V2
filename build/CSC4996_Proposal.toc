@@ -5,10 +5,10 @@
 \contentsline {section}{LIST OF EQUATIONS}{vi}{Doc-Start}%
 \contentsline {section}{LIST OF ABBREVIATIONS}{vii}{Doc-Start}%
 \contentsline {section}{\numberline {1.0}INTRODUCTION}{1}{section.1}%
-\contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.2}%
-\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.4}%
-\contentsline {paragraph}{}{1}{paragraph*.5}%
-\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.8}%
+\contentsline {paragraph}{Overview of the Research Domain}{1}{paragraph*.3}%
+\contentsline {paragraph}{Motivation and Significance}{1}{paragraph*.5}%
+\contentsline {paragraph}{}{1}{paragraph*.6}%
+\contentsline {paragraph}{Existence of a Research Gap}{1}{paragraph*.9}%
 \contentsline {subsection}{\numberline {1.1}Problem Statement}{2}{subsection.1.1}%
 \contentsline {paragraph}{}{2}{paragraph*.10}%
 \contentsline {paragraph}{}{3}{paragraph*.13}%
@@ -19,7 +19,7 @@
 \contentsline {subsection}{\numberline {2.1}Theoretical and Technical Background}{5}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}The Johnson-Lindenstrauss (JL) Lemma}{5}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Deep Support Vector Data Description (Deep SVDD)}{6}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Multimodal Behavioral Fusion}{6}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.3}Multimodal Behavioral Fusion}{7}{subsubsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.2}Literature Review}{7}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Foundational Keystroke Dynamics}{7}{subsubsection.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2}Multimodal Fusion and Mouse Dynamics}{7}{subsubsection.2.2.2}%
@@ -30,18 +30,20 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Limitations of Unimodal Authentication}{9}{subsubsection.2.3.3}%
 \contentsline {subsubsection}{\numberline {2.3.4}Gap Definition}{10}{subsubsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.4}Assumptions and Constraints}{10}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Assumptions}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1}Assumptions}{11}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Constraints and Limitations}{11}{subsubsection.2.4.2}%
 \contentsline {section}{\numberline {3.0}METHODOLOGY AND PROJECT DESIGN}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Overview of the Proposed Research Design}{12}{subsection.3.1}%
+\contentsline {paragraph}{}{12}{paragraph*.20}%
+\contentsline {paragraph}{}{13}{paragraph*.21}%
 \contentsline {subsection}{\numberline {3.2}Data Collection}{13}{subsection.3.2}%
-\contentsline {paragraph}{}{13}{paragraph*.17}%
-\contentsline {paragraph}{}{13}{paragraph*.18}%
+\contentsline {paragraph}{}{13}{paragraph*.22}%
+\contentsline {paragraph}{}{13}{paragraph*.23}%
 \contentsline {subsubsection}{\numberline {3.2.1}Primary Datasets (Multimodal \& Cross-Device)}{13}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Benchmark Datasets (Scalability \& Standardization)}{14}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Supplementary Data}{14}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Ethical Considerations}{14}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Use of Human-Generated Behavioral Data}{14}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3}Ethical Considerations}{15}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Use of Human-Generated Behavioral Data}{15}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Anonymization and De-identification}{15}{subsubsection.3.3.2}%
 \contentsline {subsubsection}{\numberline {3.3.3}Data Storage and Integrity}{15}{subsubsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.4}Evaluation and Validation}{15}{subsection.3.4}%
@@ -58,7 +60,7 @@
 \contentsline {subsection}{\numberline {5.2}Task Breakdown Structure}{20}{subsection.5.2}%
 \contentsline {subsubsection}{\numberline {5.2.1}{Phase 1: Literature Review and Problem Refinement}}{20}{subsubsection.5.2.1}%
 \contentsline {subsubsection}{\numberline {5.2.2}{Phase 2: System Design and Feature Engineering}}{20}{subsubsection.5.2.2}%
-\contentsline {subsubsection}{\numberline {5.2.3}{Phase 3: Model Development (Deep SVDD + JL Projection)}}{21}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3}{Phase 3: Model Development (\ac {Deep SVDD} + \ac {JL} Projection)}}{21}{subsubsection.5.2.3}%
 \contentsline {subsubsection}{\numberline {5.2.4}{Phase 4: Experimental Evaluation and Analysis}}{21}{subsubsection.5.2.4}%
 \contentsline {subsubsection}{\numberline {5.2.5}{Phase 5: Documentation and Final Report Writing}}{21}{subsubsection.5.2.5}%
 \contentsline {subsection}{\numberline {5.3}Gantt Chart Representation}{22}{subsection.5.3}%

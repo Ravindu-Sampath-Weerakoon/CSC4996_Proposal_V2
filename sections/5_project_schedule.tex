@@ -1,6 +1,5 @@
 \section[PROJECT SCHEDULE]{Project Schedule}
 
-
 \subsection{Project Timeline Overview}
 
 \begin{table}[H]
@@ -22,20 +21,16 @@ Final Presentation & October 19--20, 2026 \\
 \caption{Official Project Milestones}
 \end{table}
 
-
-
 \subsection{Task Breakdown Structure}
-
-The project work is divided into the following major phases, with detailed task-level activities outlined below:
 
 \begin{description}
 
     \item \subsubsection{{Phase 1: Literature Review and Problem Refinement}} (Jan -- May 2026)
     \begin{itemize}
-        \item Conduct comprehensive review on Behavioral Biometrics
-        \item Study Keystroke and Mouse Dynamics feature extraction methods
-        \item Analyze privacy-preserving biometric techniques (HE, SMPC, Cancelable Biometrics)
-        \item Review Deep SVDD and one-class anomaly detection models
+        \item Conduct comprehensive review on Behavioral Biometrics \cite{rathgeb2011cancelable}
+        \item Study Keystroke and Mouse Dynamics feature extraction methods \cite{joyce1990identity, ahmed2007new}
+        \item Analyze privacy-preserving biometric techniques (\ac{HE}, \ac{SMPC}, Cancelable Biometrics \cite{rathgeb2011cancelable})
+        \item Review \ac{Deep SVDD} \cite{ruff2018deepsvdd} and one-class anomaly detection models
         \item Identify research gap and finalize problem statement
         \item Prepare and submit Introduction and Literature Review chapters
     \end{itemize}
@@ -43,28 +38,28 @@ The project work is divided into the following major phases, with detailed task-
     \item \subsubsection{{Phase 2: System Design and Feature Engineering}} (May -- July 2026)
     \begin{itemize}
         \item Design overall system architecture
-        \item Define multimodal feature extraction pipeline
+        \item Define multimodal feature extraction pipeline for \ac{KMT}
         \item Implement feature preprocessing and normalization
-        \item Design Keyed Johnson–Lindenstrauss projection mechanism
-        \item Define evaluation metrics (FAR, FRR, EER, Accuracy)
+        \item Design Keyed \ac{JL} projection mechanism \cite{johnson1984extensions, wang2014alignment}
+        \item Define evaluation metrics (\ac{FAR}, \ac{FRR}, \ac{EER}, Accuracy)
     \end{itemize}
 
-    \item \subsubsection{{Phase 3: Model Development (Deep SVDD + JL Projection)}} (June -- August 2026)
+    \item \subsubsection{{Phase 3: Model Development (\ac{Deep SVDD} + \ac{JL} Projection)}} (June -- August 2026)
     \begin{itemize}
-        \item Implement Deep SVDD architecture
+        \item Implement \ac{Deep SVDD} architecture \cite{ruff2018deepsvdd}
         \item Integrate projected features into model training
-        \item Optimize hyperparameters
+        \item Optimize hyperparameters (e.g., \ac{ReLU} activation, learning rates)
         \item Perform model validation
         \item Analyze computational complexity and latency
     \end{itemize}
 
     \item \subsubsection{{Phase 4: Experimental Evaluation and Analysis}} (August -- September 2026)
     \begin{itemize}
-        \item Conduct authentication performance evaluation
+        \item Conduct authentication performance evaluation using \ac{CMU} \cite{cmu2009benchmark} and \ac{BB-MAS} \cite{suais2019bbmas} datasets
         \item Measure privacy robustness against inversion attacks
         \item Compare proposed framework with baseline methods
         \item Analyze trade-off between privacy, accuracy, and latency
-        \item Prepare experimental result visualizations
+        \item Prepare experimental result visualizations (e.g., \ac{MSE} analysis)
     \end{itemize}
 
     \item \subsubsection{{Phase 5: Documentation and Final Report Writing}} (September -- October 2026)
@@ -78,6 +73,8 @@ The project work is divided into the following major phases, with detailed task-
     \end{itemize}
 
 \end{description}
+
+
 
 \subsection{Gantt Chart Representation}
 
@@ -125,11 +122,6 @@ The estimated workload distribution across project phases is illustrated in Figu
 \label{fig:piechart}
 \end{figure}
 
-
 \subsection{Project Management Strategy}
 
-
 The proposed project will adopt an incremental research development approach. Each stage will build upon the previous stage, allowing for the early validation of assumptions before moving on to the computationally intensive task of model training. There will be regular meetings with the supervisor to track progress and address potential risks.
-
-
-\newpage

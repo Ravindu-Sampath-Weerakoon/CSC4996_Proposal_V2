@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  14 FEB 2026 15:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  14 FEB 2026 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1250,13 +1250,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [3
 
-])
+]
+Package acronym Info: Label `acro:Deep SVDD' newly defined as it shall be overridden
+although it is yet undefined on input line 63.
+Package acronym Info: Label `acro:JL' newly defined as it shall be overridden
+although it is yet undefined on input line 63.
+)
 \tf@toc=\write6
 \openout6 = `CSC4996_Proposal.toc'.
 
  [4]) (frontmatter/listoffigures.tex (d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.lof
-Package acronym Info: Label `acro:JL' newly defined as it shall be overridden
-although it is yet undefined on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1293,8 +1296,6 @@ Package acronym Info: Label `acro:HE' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
 Package acronym Info: Label `acro:IoT' newly defined as it shall be overridden
 although it is yet undefined on input line 11.
-Package acronym Info: Label `acro:Deep SVDD' newly defined as it shall be overridden
-although it is yet undefined on input line 14.
  [1
 
 ]
@@ -1313,24 +1314,55 @@ although it is yet undefined on input line 49.
 Package acronym Info: Label `acro:DL' newly defined as it shall be overridden
 although it is yet undefined on input line 64.
  [4]) (sections/2_background.tex [5{C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 236.
+Package acronym Info: Label `acro:MSE' newly defined as it shall be overridden
+although it is yet undefined on input line 155.
  [6{C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
-Overfull \hbox (12.58463pt too wide) in paragraph at lines 252--281
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 235.
+
+Overfull \hbox (12.58463pt too wide) in paragraph at lines 251--280
  [][] 
  []
 
-[7] [8] [9] [10] [11]) (sections/3_methodology.tex [12]
-Package acronym Info: Label `acro:SU-AIS' newly defined as it shall be overridden
-although it is yet undefined on input line 110.
+[7] [8] [9] [10]
 Package acronym Info: Label `acro:BB-MAS' newly defined as it shall be overridden
-although it is yet undefined on input line 110.
-Package acronym Info: Label `acro:SVDD' newly defined as it shall be overridden
-although it is yet undefined on input line 111.
- [13]
+although it is yet undefined on input line 378.
 Package acronym Info: Label `acro:CMU' newly defined as it shall be overridden
-although it is yet undefined on input line 139.
- [14] [15] [16]) (sections/4_results.tex [17] [18] [19]) (sections/5_project_schedule.tex [20] [21] [22]) [23
+although it is yet undefined on input line 378.
+ [11]) (sections/3_methodology.tex [12]
+Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
+although it is yet undefined on input line 102.
+Package acronym Info: Label `acro:SU-AIS' newly defined as it shall be overridden
+although it is yet undefined on input line 108.
+ [13] [14]
+Package acronym Info: Label `acro:FAR' newly defined as it shall be overridden
+although it is yet undefined on input line 198.
+Package acronym Info: Label `acro:FP' newly defined as it shall be overridden
+although it is yet undefined on input line 201.
+Package acronym Info: Label `acro:TN' newly defined as it shall be overridden
+although it is yet undefined on input line 201.
+ [15]
+Package acronym Info: Label `acro:FRR' newly defined as it shall be overridden
+although it is yet undefined on input line 204.
+Package acronym Info: Label `acro:FN' newly defined as it shall be overridden
+although it is yet undefined on input line 207.
+Package acronym Info: Label `acro:TP' newly defined as it shall be overridden
+although it is yet undefined on input line 207.
+ [16]) (sections/4_results.tex [17]
+Package acronym Info: Label `acro:SMPC' newly defined as it shall be overridden
+although it is yet undefined on input line 51.
+ [18] [19]) (sections/5_project_schedule.tex [20]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 47.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ac' on input line 47.
+
+Package acronym Info: Label `acro:ReLU' newly defined as it shall be overridden
+although it is yet undefined on input line 51.
+[21]) [22] [23
 
 ]
 Package microtype Info: Character `029' is missing
@@ -1360,17 +1392,17 @@ Package logreq Info: Writing requests to 'CSC4996_Proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50804 strings out of 467871
- 1140042 string characters out of 5418376
- 2306605 words of memory out of 5000000
- 78112 multiletter control sequences out of 15000+600000
- 786009 words of font info for 280 fonts, out of 8000000 for 9000
+ 50871 strings out of 467871
+ 1141029 string characters out of 5418376
+ 2307217 words of memory out of 5000000
+ 78155 multiletter control sequences out of 15000+600000
+ 785999 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,21n,94p,1607b,2314s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (40 pages, 676201 bytes).
+Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (40 pages, 729891 bytes).
 PDF statistics:
- 1248 PDF objects out of 1440 (max. 8388607)
- 421 named destinations out of 1000 (max. 500000)
+ 1503 PDF objects out of 1728 (max. 8388607)
+ 445 named destinations out of 1000 (max. 500000)
  87677 words of extra memory for PDF output out of 89155 (max. 10000000)
 

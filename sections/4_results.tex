@@ -7,18 +7,18 @@
 
 \subsection{Expected Technical Outcomes}
 
-The proposed research is expected to yield a new lightweight privacy-preserving behavioral biometric authentication scheme that combines Deep Support Vector Data Description (Deep SVDD) with Keyed Johnson-Lindenstrauss (JL) projections. The technical expected outcomes include:
+The proposed research is expected to yield a new lightweight privacy-preserving behavioral biometric authentication scheme that combines \ac{Deep SVDD} \cite{ruff2018deepsvdd} with Keyed \ac{JL} projections. The technical expected outcomes include:
 
 \begin{itemize}
-    \item \textbf{Privacy-Preserving Template Protection:} Proof of the possibility of transforming behavioral biometric templates using keyed JL projections in such a way that the original behavioral data (keystroke and mouse movements) cannot be reconstructed.
+    \item \textbf{Privacy-Preserving Template Protection:} Proof of the possibility of transforming behavioral biometric templates using keyed \ac{JL} projections \cite{johnson1984extensions, wang2014alignment} in such a way that the original behavioral data (keystroke and mouse movements) cannot be reconstructed.
     
-    \item \textbf{Template Revocability:} Validation that compromised biometric templates can be revoked and re-issued by regenerating projection keys, without requiring users to alter their intrinsic behavioral traits.
+    \item \textbf{Template Revocability:} Validation that compromised biometric templates can be revoked and re-issued by regenerating projection keys, without requiring users to alter their intrinsic behavioral traits, adhering to the principles of cancelable biometrics \cite{rathgeb2011cancelable}.
     
-    \item \textbf{Low-Latency Anomaly Detection:} Empirical evidence showing that the Deep SVDD-based one-class classification model enables real-time anomaly detection suitable for continuous authentication on resource-constrained edge devices.
+    \item \textbf{Low-Latency Anomaly Detection:} Empirical evidence showing that the \ac{Deep SVDD}-based \cite{ruff2018deepsvdd} one-class classification model enables real-time anomaly detection suitable for continuous authentication on resource-constrained edge devices.
     
-    \item \textbf{Competitive Recognition Performance:} Achievement of authentication accuracy, False Acceptance Rate (FAR), and False Rejection Rate (FRR) comparable to or better than existing behavioral biometric systems that rely on raw templates.
+    \item \textbf{Competitive Recognition Performance:} Achievement of authentication accuracy, \ac{FAR}, and \ac{FRR} comparable to or better than existing behavioral biometric systems that rely on raw templates.
     
-    \item \textbf{Reduced Computational Overhead:} Significant reduction in latency and computational cost compared to homomorphic encryption-based privacy-preserving solutions, making the framework practical for deployment in real-world systems.
+    \item \textbf{Reduced Computational Overhead:} Significant reduction in latency and computational cost compared to \ac{HE}-based \cite{cheon2017homomorphic} privacy-preserving solutions, making the framework practical for deployment in real-world systems.
 \end{itemize}
 
 \subsection{Scientific Contribution and Contribution to Knowledge}
@@ -26,13 +26,13 @@ The proposed research is expected to yield a new lightweight privacy-preserving 
 The proposed work is expected to contribute to the scientific community in the following ways:
 
 \begin{itemize}
-    \item \textbf{A Unified Lightweight Framework:} Introduction of a unified architecture that jointly addresses privacy preservation, template revocability, and efficient anomaly detection — a combination currently underexplored in behavioral biometrics research.
+    \item \textbf{A Unified Lightweight Framework:} Introduction of a unified architecture that jointly addresses privacy preservation, template revocability \cite{rathgeb2011cancelable}, and efficient anomaly detection — a combination currently underexplored in behavioral biometrics research.
     
-    \item \textbf{Formal Privacy-Utility Trade-off Analysis:} Provision of a systematic evaluation of the trade-off between dimensionality reduction, projection randomness, and authentication accuracy.
+    \item \textbf{Formal Privacy-Utility Trade-off Analysis:} Provision of a systematic evaluation of the trade-off between dimensionality reduction, projection randomness, and authentication accuracy using the \ac{JL} lemma \cite{johnson1984extensions}.
     
-    \item \textbf{Integration of Random Projection Theory with Deep One-Class Learning:} Novel integration of Johnson-Lindenstrauss projections with Deep SVDD for secure biometric template transformation.
+    \item \textbf{Integration of Random Projection Theory with Deep One-Class Learning:} Novel integration of \ac{JL} projections with \ac{Deep SVDD} \cite{ruff2018deepsvdd} for secure biometric template transformation.
     
-    \item \textbf{Edge-Ready Continuous Authentication Model:} Advancement of research toward deployable, edge-compatible behavioral biometric systems.
+    \item \textbf{Edge-Ready Continuous Authentication Model:} Advancement of research toward deployable, edge-compatible behavioral biometric systems for \ac{IoT} and mobile environments \cite{rahman2021scalable}.
 \end{itemize}
 
 \subsection{Novel Contributions}
@@ -41,32 +41,35 @@ This research introduces several novel contributions to the field of privacy-pre
 
 \begin{itemize}
 
-    \item \textbf{Cancelable Multimodal Behavioral Template via Keyed JL Projections:} 
-    In contrast to traditional behavioral biometric systems, which store raw or lightly processed templates, this paper proposes a keyed random projection approach that ensures non-invertibility and revocability of multimodal behavioral features.
+    \item \textbf{Cancelable Multimodal Behavioral Template via Keyed \ac{JL} Projections:} 
+    In contrast to traditional behavioral biometric systems \cite{gaines1980authentication, joyce1990identity}, which store raw or lightly processed templates, this paper proposes a keyed random projection approach \cite{teoh2006random, wang2014alignment} that ensures non-invertibility and revocability of multimodal behavioral features.
 
-    \item \textbf{Integration of Random Projection Theory with Deep One-Class Learning:}
-Although Johnson-Lindenstrauss projections and Deep SVDD have been investigated separately in the literature, a combination of these methods for secure continuous behavioral authentication has not been investigated. This paper fills this gap by providing a single framework that combines dimensionality-preserving random projections with hypersphere-based anomaly detection.
+    \item \textbf{Integration of Random Projection Theory with \ac{DL} One-Class Learning:}
+    Although \ac{JL} projections \cite{johnson1984extensions} and \ac{Deep SVDD} \cite{ruff2018deepsvdd} have been investigated separately in the literature, a combination of these methods for secure continuous authentication has not been investigated. This paper fills this gap by providing a single framework that combines dimensionality-preserving random projections with hypersphere-based anomaly detection.
 
     \item \textbf{Lightweight Alternative to Cryptographic Privacy Mechanisms:}
-The existing solutions for privacy-preserving authentication are highly dependent on homomorphic encryption or secure multi-party computation, which have high computational complexity. This work presents a computationally efficient solution that has a theoretical basis.
+    The existing solutions for privacy-preserving authentication are highly dependent on \ac{HE} \cite{cheon2017homomorphic} or \ac{SMPC}, which have high computational complexity. This work presents a computationally efficient solution that has a theoretical basis.
+
     \item \textbf{Formal Privacy–Latency–Accuracy Trade-off Characterization:}
-    The study provides an empirical and theoretical evaluation of how projection dimension and embedding space affect authentication accuracy, latency, and resistance to feature reconstruction attacks.
+    The study provides an empirical and theoretical evaluation of how projection dimension and embedding space affect authentication accuracy, latency, and resistance to feature reconstruction attacks, utilizing standard metrics such as \ac{EER}, \ac{FAR}, and \ac{FRR}.
 
     \item \textbf{Edge-Deployable Continuous Authentication Architecture:}
-    The proposed framework is designed specifically for practical deployment on resource-constrained devices, bridging the gap between theoretical privacy guarantees and real-world usability.
+    The proposed framework is designed specifically for practical deployment on resource-constrained \ac{IoT} devices \cite{rahman2021scalable}, bridging the gap between theoretical privacy guarantees and real-world usability.
 
 \end{itemize}
-
 
 \subsection{Final Products}
 
 The final deliverables of this research are anticipated to include:
 
 \begin{itemize}
-    \item A fully implemented and experimentally validated privacy-preserving behavioral biometric authentication framework.
-    \item A comprehensive experimental evaluation report including performance metrics (accuracy, FAR, FRR, EER), computational cost analysis, and privacy robustness evaluation.
-    \item A publishable conference or journal manuscript detailing the framework, theoretical foundations, and empirical validation.
-    \item Open-source implementation (if permitted) to support reproducibility and further research.
+    \item A fully implemented and experimentally validated privacy-preserving behavioral biometric authentication framework utilizing \ac{Deep SVDD} \cite{ruff2018deepsvdd} and keyed \ac{JL} projections.
+    
+    \item A comprehensive experimental evaluation report including performance metrics (\ac{FAR}, \ac{FRR}, \ac{EER}), computational cost analysis, and privacy robustness evaluation against benchmark datasets such as \ac{CMU} \cite{cmu2009benchmark} and \ac{BB-MAS} \cite{suais2019bbmas}.
+    
+    \item A publishable conference or journal manuscript detailing the framework, theoretical foundations based on random multispace quantization \cite{teoh2006random}, and empirical validation.
+    
+    \item Open-source implementation (if permitted) to support reproducibility and further research in the field of cancelable biometrics \cite{rathgeb2011cancelable}.
 \end{itemize}
 
 \subsection{Potential Impact and Significance}
@@ -74,13 +77,14 @@ The final deliverables of this research are anticipated to include:
 The results of this work have the potential to greatly impact the design of future authentication systems. By removing the need for expensive cryptographic computation while still maintaining strong privacy guarantees, this framework could enable:
 
 \begin{itemize}
-    \item Secure continuous authentication in financial systems, healthcare platforms, and remote work environments.
-    \item Deployment on edge devices such as laptops, mobile devices, and IoT endpoints.
-    \item Reduction in identity theft risks associated with centralized storage of raw biometric templates.
+    \item Secure continuous authentication in financial systems, healthcare platforms, and remote work environments, building upon foundational keystroke and mouse dynamics research \cite{shepherd1995continuous, ahmed2007new, mondal2017continuous}.
+    
+    \item Deployment on edge devices such as laptops, mobile devices, and \ac{IoT} endpoints, addressing the scalability needs of modern behavioral authentication \cite{rahman2021scalable, pirzado2021keystroke}.
+    
+    \item Reduction in identity theft risks associated with centralized storage of raw biometric templates by employing cancelable biometric principles \cite{rathgeb2011cancelable, teoh2006random}.
 \end{itemize}
 
 Ultimately, this work aims to bridge the gap between privacy-preserving theory and practical real-time authentication, contributing toward more secure and user-friendly digital identity systems.
-
 
 \newpage
 

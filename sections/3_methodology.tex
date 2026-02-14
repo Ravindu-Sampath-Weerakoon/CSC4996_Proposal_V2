@@ -1,6 +1,6 @@
 \section[METHODOLOGY AND PROJECT DESIGN]{Methodology and Project Design}
 
-The proposed methodology follows a quantitative experimental approach to assess the performance of privacy-preserving continuous authentication. The research design is based on the “Privacy-by-Design” principle, which ensures that the behavioral templates are never shared or stored in an invertible form.
+The proposed methodology follows a quantitative experimental approach to assess the performance of privacy-preserving continuous authentication. The research design is based on the “Privacy-by-Design” principle \cite{rathgeb2011cancelable}, which ensures that the behavioral templates (\ac{KMT}) are never shared or stored in an invertible form. This is achieved by applying Keyed-\ac{JL} projections at the edge before transmitting features to the \ac{Deep SVDD} \cite{ruff2018deepsvdd} backend for one-class classification.
 
 \begin{figure}[H]
     \centering
@@ -91,31 +91,29 @@ The proposed methodology follows a quantitative experimental approach to assess 
 
 \subsection{Overview of the Proposed Research Design}
 
-The system architecture is divided into two distinct environments separated by a \textbf{Privacy Barrier}: the \textbf{Client Side}, where data is captured and transformed, and the \textbf{Server Side}, where authentication decisions are made. 
+\paragraph{}The system architecture is divided into two distinct environments separated by a \textbf{Privacy Barrier}: the \textbf{Client Side}, where data is captured and transformed using Keyed-\ac{JL} projections, and the \textbf{Server Side}, where authentication decisions are made. This design ensures that raw behavioral features never leave the local device. The \ac{Deep SVDD} \cite{ruff2018deepsvdd} engine resides on the server, performing anomaly detection on the projected privacy-preserving embeddings to distinguish legitimate users from impostors.
 
-
-The methodology follows a structured pipeline: (1) \textbf{Data Acquisition} from logs, (2) \textbf{Feature Engineering} for multimodal fusion, (3) \textbf{Keyed-JL Transformation} for privacy, and (4) \textbf{Deep SVDD Detection} for real-time authentication.
-
+\paragraph{} The methodology follows a structured pipeline: (1) \textbf{Data Acquisition} from logs using datasets such as \ac{BB-MAS} \cite{suais2019bbmas} and \ac{CMU} \cite{cmu2009benchmark}, (2) \textbf{Feature Engineering} for multimodal fusion (\ac{KMT}) \cite{mondal2017continuous}, (3) \textbf{Keyed-\ac{JL} Transformation} \cite{johnson1984extensions, wang2014alignment} for privacy, and (4) \textbf{\ac{Deep SVDD} Detection} \cite{ruff2018deepsvdd} for real-time authentication.
 
 \subsection{Data Collection}
 
-\paragraph{} To make sure that the proposed privacy-preserving framework is robust, scalable, and generalizes well to real-world settings, this research work adopts a \textbf{Hybrid Multi-Source Dataset} approach. The data is aggregated from five different sources, including fixed-text, free-text, and multimodal (Keystroke + Mouse) interactions.
+\paragraph{} To make sure that the proposed privacy-preserving framework is robust, scalable, and generalizes well to real-world settings, this research work adopts a \textbf{Hybrid Multi-Source Dataset} approach. The data is aggregated from five different sources, including fixed-text, free-text, and multimodal (\ac{KMT}) interactions.
 
-\paragraph{} The choice of the behavioral features to be extracted—namely, Dwell Time and Flight Time—is based on the fact that these are high-quality biomechanical features. The validity of these features is established in Appendix B, where a baseline SVM classifier is used to classify real-world behavioral data points.
+\paragraph{} The choice of the behavioral features to be extracted—namely, Dwell Time and Flight Time—is based on the fact that these are high-quality biomechanical features. The validity of these features is established in Appendix B, where a baseline \ac{SVM} \cite{zareen2018user} classifier is used to classify real-world behavioral data points.
 
 \subsubsection{Primary Datasets (Multimodal \& Cross-Device)}
 The core training and fusion phases utilize datasets offering high-granularity sensor data:
 
 \begin{itemize}
     \item \textbf{\ac{SU-AIS} \ac{BB-MAS} \cite{suais2019bbmas}:} 
-    This serves as the primary source for training the \ac{SVDD} model. 
+    This serves as the primary source for training the \ac{Deep SVDD} \cite{ruff2018deepsvdd} model. 
     \begin{itemize}
         \item \textbf{Population:} $N = 117$ unique subjects.
         \item \textbf{Volume:} Approximately 11,760 keystrokes per user (Desktop subset).
         \item \textbf{Relevance:} Facilitates analysis of behavioral stability across different physical interfaces.
     \end{itemize}
 
-    \item \textbf{Edge Hill KMT \cite{edgehill2012dataset}:}
+    \item \textbf{Edge Hill \ac{KMT} \cite{edgehill2012dataset}:}
     Critical for the multimodal fusion layer, capturing simultaneous mouse and keyboard interactions.
     \begin{itemize}
         \item \textbf{Scenario:} High-security financial form filling context.
@@ -172,54 +170,65 @@ Mouse Features \cite{reddy2025mouse} & Mouse & Aggregated & Feature Engineering 
 \subsection{Ethical Considerations}
 
 \subsubsection{Use of Human-Generated Behavioral Data}
-This research utilizes secondary behavioral data consisting of keystroke and mouse interaction logs from five high-impact repositories.
+This research utilizes secondary behavioral data consisting of keystroke and mouse interaction (\ac{KMT}) logs from five high-impact repositories.
 \begin{itemize}
     \item \textbf{Data Nature:} The logs represent biomechanical patterns (dwell times, flight times, and mouse trajectories) rather than sensitive content or personal information.
     \item \textbf{Non-intrusive Capture:} No keystroke logging of sensitive text is performed; the study focuses solely on temporal characteristics.
 \end{itemize}
 
 \subsubsection{Anonymization and De-identification}
-The datasets employed, such as the Aalto 136M and SU-AIS BB-MAS, have been previously anonymized. 
+The datasets employed, such as the Aalto 136M \cite{dhakal2018136m} and \ac{SU-AIS} \ac{BB-MAS} \cite{suais2019bbmas}, have been previously anonymized. 
 \begin{itemize}
     \item \textbf{Participant Privacy:} Individual data points are mapped to randomized identifiers, precluding the possibility of identity reconstruction.
-    \item \textbf{Privacy-by-Design:} The use of Keyed-JL Projections ensures that biometric templates are mathematically irreversible, providing a second layer of ethical protection against feature recovery attacks.
+    \item \textbf{Privacy-by-Design:} The use of Keyed-\ac{JL} Projections ensures that biometric templates are mathematically irreversible, providing a second layer of ethical protection against feature recovery attacks \cite{rathgeb2011cancelable}.
 \end{itemize}
 
 \subsubsection{Data Storage and Integrity}
-During the experimental phase, data integrity is maintained through encrypted storage protocols. Only projected embeddings are transmitted for server-side processing, adhering to the principle of data minimization.
+During the experimental phase, data integrity is maintained through encrypted storage protocols. Only projected embeddings are transmitted for server-side processing (\ac{Deep SVDD}) \cite{ruff2018deepsvdd}, adhering to the principle of data minimization.
 %State if human data, user-generated data, or medical/social/personal data is used.
 
 \subsection{Evaluation and Validation}
 
-In order to properly evaluate the performance and privacy of the proposed Keyed-JL and Deep SVDD framework, a comprehensive experimental design is used. This section describes the quantitative metrics and validation approaches used to evaluate the authentication accuracy and efficiency of the system.
+In order to properly evaluate the performance and privacy of the proposed Keyed-\ac{JL} and \ac{Deep SVDD} framework \cite{ruff2018deepsvdd}, a comprehensive experimental design is used. This section describes the quantitative metrics and validation approaches used to evaluate the authentication accuracy (\ac{EER}) and efficiency of the system.
 
 \subsubsection{Authentication Performance Metrics}
-The system's ability to distinguish between a legitimate user and an impostor is evaluated using standard biometric error rates:
+The system's ability to distinguish between a legitimate user and an impostor is evaluated using standard biometric error rates \cite{cmu2009benchmark}:
 
 \begin{itemize}
-    \item \textbf{False Acceptance Rate (FAR):} Measures the frequency with which the system incorrectly grants access to an unauthorized impostor.
+    \item \textbf{\ac{FAR}:} Measures the frequency with which the system incorrectly grants access to an unauthorized impostor.
     \begin{equation}
         \eqname{False Acceptance Rate (FAR) Calculation}
-        FAR = \frac{FP}{FP + TN} \times 100\%
+        FAR = \frac{\ac{FP}}{\ac{FP} + \ac{TN}} \times 100\%
     \end{equation}
     
-    \item \textbf{False Rejection Rate (FRR):} Measures the frequency with which the system incorrectly denies access to the legitimate user.
+    \item \textbf{\ac{FRR}:} Measures the frequency with which the system incorrectly denies access to the legitimate user.
     \begin{equation}
         \eqname{False Rejection Rate (FRR) Calculation}
-        FRR = \frac{FN}{FN + TP} \times 100\%
+        FRR = \frac{\ac{FN}}{\ac{FN} + \ac{TP}} \times 100\%
     \end{equation}
     
-    \item \textbf{Equal Error Rate (EER):} The point where $FAR = FRR$. A lower EER indicates higher system robustness.
+    \item \textbf{\ac{EER}:} The point where $FAR = FRR$. A lower \ac{EER} indicates higher system robustness.
 \end{itemize}
 
 \subsubsection{Privacy and Efficiency Validation}
 
-
 To validate the privacy-preserving component and real-time viability, the following metrics are analyzed:
 \begin{itemize}
-    \item \textbf{Template Irreversibility:} Testing the mathematical resilience of the JL-transformation against feature recovery attacks.
-    \item \textbf{Revocability:} Ensuring that regenerating the projection matrix $R_K$ creates uncorrelated templates for the same user, satisfying the requirement for cancelable biometrics.
-    \item \textbf{System Latency:} Measuring the total processing time from feature extraction to server-side decision, targeting a sub-200ms threshold.
+    \item \textbf{Template Irreversibility:} Testing the mathematical resilience of the \ac{JL}-transformation against feature recovery attacks \cite{teoh2006random, wang2014alignment}. This is quantified by the Reconstruction Resistance (\ac{MSE}), ensuring that any attempt to reconstruct the original feature vector $X$ from the template $T$ results in high error:
+    \begin{equation}
+        \eqname{Template Reconstruction Resistance}
+        MSE_{recon} = \frac{1}{N} \sum_{i=1}^{N} (X_i - \mathcal{D}(T_i))^2
+    \end{equation}
+    where $\mathcal{D}$ represents a sophisticated reconstruction adversary.
+    
+    \item \textbf{Revocability:} Ensuring that regenerating the projection matrix $R_K$ creates uncorrelated templates for the same user, satisfying the requirement for cancelable biometrics \cite{rathgeb2011cancelable}.
+    
+    \item \textbf{System Latency:} Measuring the total processing time from feature extraction to server-side decision, targeting a sub-200ms threshold \cite{rahman2021scalable}. The total inference latency $L_{inf}$ is modeled as:
+    \begin{equation}
+        \eqname{Total System Latency Calculation}
+        L_{inf} = T_{proj} + T_{enc} + T_{score}
+    \end{equation}
+    where $T_{proj}$ is the projection time, $T_{enc}$ is the transmission delay, and $T_{score}$ is the \ac{Deep SVDD} \cite{ruff2018deepsvdd} scoring time.
 \end{itemize}
 %Experimental design, evaluation and validation of the proposed solution. These mayinclude various metrics and equations.
 

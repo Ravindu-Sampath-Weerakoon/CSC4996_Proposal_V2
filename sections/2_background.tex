@@ -5,7 +5,7 @@
 
 \subsection{Theoretical and Technical Background}
 
-The proposed research combines ideas from high-dimensional geometry, privacy-preserving machine learning, and multimodal behavioral biometrics. This section describes the mathematical and architectural foundations necessary to comprehend the Keyed-JL and Deep SVDD framework.
+The proposed research combines ideas from high-dimensional geometry, privacy-preserving machine learning, and multimodal behavioral biometrics. This section describes the mathematical and architectural foundations necessary to comprehend the Keyed-\ac{JL} and \ac{Deep SVDD} framework \cite{johnson1984extensions, ruff2018deepsvdd}.
 
 \subsubsection{The Johnson-Lindenstrauss (JL) Lemma}
 
@@ -152,8 +152,7 @@ In this research, the projection matrix is generated using a secret key, ensurin
     \label{fig:deep_svdd_concept}
 \end{figure}
 
-The authentication engine utilizes Deep SVDD, an unsupervised method for one-class classification. It maps legitimate user features into a minimum-volume hypersphere in a latent space. 
-
+The authentication engine utilizes \ac{Deep SVDD} \cite{ruff2018deepsvdd}, an unsupervised method for one-class classification. It maps legitimate user features into a minimum-volume hypersphere in a latent space, optimized to minimize the \ac{MSE} between the transformed features and the hypersphere center.
 
 
 The objective function minimizes the distance of the network outputs to the center $c$ of the hypersphere:
@@ -242,7 +241,7 @@ The system architecture relies on the fusion of keystroke timing and mouse movem
 
 \subsection{Literature Review}
 
-The development of behavioral authentication has moved from basic timing analysis to intricate multimodal deep learning models. This section groups existing work into major subfields relevant to the proposed Keyed-JL and Deep SVDD framework.
+The development of behavioral authentication has moved from basic timing analysis \cite{gaines1980authentication} to intricate multimodal \ac{DL} models \cite{kiyani2020continuous}. This section groups existing work into major subfields relevant to the proposed Keyed-\ac{JL} and \ac{Deep SVDD} framework \cite{ruff2018deepsvdd}.
 
 \begin{table}[http] 
     \centering
@@ -283,30 +282,28 @@ The development of behavioral authentication has moved from basic timing analysi
 
 
 \subsubsection{Foundational Keystroke Dynamics}
-Early work proved the concept of biometric authentication using typing patterns. Key studies by Gaines et al. showed that keystroke timing, namely dwell time and flight time, is distinct to each user. Although early biometric systems were based on static login authentication \cite{joyce1990identity}, later research by Shepherd introduced continuous authentication, enabling ongoing monitoring of sessions. Monrose and Rubin later showed the value of these patterns in securing traditional password-based systems.
+Early work proved the concept of biometric authentication using typing patterns. Key studies by Gaines et al. \cite{gaines1980authentication} showed that keystroke timing, namely dwell time and flight time, is distinct to each user. Although early biometric systems were based on static login authentication \cite{joyce1990identity}, later research by Shepherd \cite{shepherd1995continuous} introduced continuous authentication, enabling ongoing monitoring of sessions. Monrose and Rubin \cite{monrose1999hardening} later showed the value of these patterns in securing traditional password-based systems.
 
 \subsubsection{Multimodal Fusion and Mouse Dynamics}
-To enhance the robustness of recognition, researchers combined mouse dynamics and fusion methods. Ahmed and Traore demonstrated that mouse movement trajectories and click rates form a unique behavioral pattern. Mondal and Bours demonstrated that a multimodal system, combining keystroke and mouse information, leads to a substantial improvement in the Equal Error Rate (EER) compared to unimodal systems. More recent challenges, such as those proposed by Reddy, focus on mouse dynamics based on feature engineering for anomaly detection.
+To enhance the robustness of recognition, researchers combined mouse dynamics and fusion methods. Ahmed and Traore \cite{ahmed2007new} demonstrated that mouse movement trajectories and click rates form a unique behavioral pattern. Mondal and Bours \cite{mondal2017continuous} demonstrated that a multimodal system (\ac{KMT}), combining keystroke and mouse information, leads to a substantial improvement in the \ac{EER} compared to unimodal systems. More recent challenges, such as those proposed by Reddy \cite{reddy2025mouse}, focus on mouse dynamics based on feature engineering for anomaly detection.
 
 \subsubsection{Deep Learning and Privacy Methodologies}
-Contemporary studies apply deep learning but point out the increasing privacy issues. High-accuracy models based on Recurrent Neural Networks (RNN) and Bayesian neural networks have become common practice for behavior modeling. Nevertheless, as demonstrated in the KDPrint framework by Kim et al., the representation of behavioral data in the form of standardized images can make templates susceptible to attacks if they are not appropriately protected. Although Homomorphic Encryption (HE) provides a mathematical remedy for privacy, its latency may be beyond the needs of continuous monitoring. This study fills the gap by integrating the privacy of Keyed-JL projections with the efficiency of Deep SVDD.
-%Related literature and previous research work categorized by subdomains/topicsapplicable to your research. Summarize and compare related studies, existing methods,datasets, evaluations, findings
+Contemporary studies apply deep learning but point out the increasing privacy issues. High-accuracy models based on \acp{RNN} \cite{kiyani2020continuous} and Bayesian neural networks \cite{zareen2018user} have become common practice for behavior modeling. Nevertheless, as demonstrated in the KDPrint framework by Kim et al. \cite{kim2024kdprint}, the representation of behavioral data in the form of standardized images can make templates susceptible to attacks if they are not appropriately protected. Although \ac{HE} \cite{cheon2017homomorphic} provides a mathematical remedy for privacy, its latency may be beyond the needs of continuous monitoring \cite{rahman2021scalable}. This study fills the gap by integrating the privacy of Keyed-\ac{JL} projections with the efficiency of \ac{Deep SVDD} \cite{ruff2018deepsvdd}.
 
 
 \subsection{Research Gap}
-Despite advancements in behavioral biometrics, a critical gap exists in providing simultaneous mathematical privacy, low latency, and template revocability.
+Despite advancements in behavioral biometrics, a critical gap exists in providing simultaneous mathematical privacy, low latency, and template revocability \cite{rathgeb2011cancelable}.
 
 \subsubsection{Technical Dichotomy: Privacy vs. Performance}
 
-There is a large gap between highly accurate Deep Learning models and privacy-preserving cryptographic approaches. Traditional models retain reversible templates, whereas Homomorphic Encryption imposes unacceptably high latencies (typically $>1.5$s) that are not applicable for continuous observation on edge devices.
+There is a large gap between highly accurate \ac{DL} models and privacy-preserving cryptographic approaches. Traditional models retain reversible templates \cite{kim2018user}, whereas \ac{HE} \cite{cheon2017homomorphic} imposes unacceptably high latencies (typically $>1.5$s) that are not applicable for continuous observation on edge devices \cite{rahman2021scalable}.
 
 
 \subsubsection{Vulnerability of Static Biometric Templates}
-There is no standardized way for “cancelable” behavioral biometrics in current literature. Unlike traditional authentication methods, behavioral traits are non-reversible; if a stored template is breached, the user’s digital identity is put at risk because there is no lightweight method to re-issue a new, non-correlated behavioral profile.
+There is no standardized way for “cancelable” behavioral biometrics in current literature. Unlike traditional authentication methods, behavioral traits are non-reversible; if a stored template is breached, the user’s digital identity is put at risk because there is no lightweight method to re-issue a new, non-correlated behavioral profile \cite{rathgeb2011cancelable, monrose1999hardening}.
 
 \subsubsection{Limitations of Unimodal Authentication}
-The majority of privacy-preserving transformations lead to a certain level of information loss. The current state of unimodal studies (either keystroke or mouse) tends to neglect the recognition accuracy while applying strong dimensionality reduction. There is a research gap concerning the compensation of entropy loss due to privacy-preserving transformations by multimodal fusion.
-
+The majority of privacy-preserving transformations lead to a certain level of information loss. The current state of unimodal studies (either keystroke or mouse) \cite{gaines1980authentication, ahmed2007new} tends to neglect the recognition accuracy while applying strong dimensionality reduction. There is a research gap concerning the compensation of entropy loss due to privacy-preserving transformations by multimodal fusion (\ac{KMT}) \cite{mondal2017continuous}.
 \subsubsection{Gap Definition}
 
 \begin{figure}[H]
@@ -357,7 +354,7 @@ The majority of privacy-preserving transformations lead to a certain level of in
     \label{fig:gap_dichotomy}
 \end{figure}
 
-The research gap is formally defined as the lack of a unified behavioral authentication framework that provides \textbf{provable non-invertibility} without sacrificing the \textbf{sub-second latency} required for continuous monitoring. While existing studies achieve high accuracy using Deep Learning, they fail to provide a mechanism for template revocability, meaning a compromised biometric profile is permanently lost. Conversely, cryptographic methods that provide privacy are too computationally expensive for real-time use on standard hardware.
+The research gap is formally defined as the lack of a unified behavioral authentication framework that provides \textbf{provable non-invertibility} without sacrificing the \textbf{sub-second latency} required for continuous monitoring. While existing studies achieve high accuracy using \ac{DL} \cite{kiyani2020continuous, kim2024kdprint}, they fail to provide a mechanism for template revocability, meaning a compromised biometric profile is permanently lost \cite{rathgeb2011cancelable}. Conversely, cryptographic methods like \ac{HE} \cite{cheon2017homomorphic} that provide privacy are too computationally expensive for real-time use on standard hardware \cite{rahman2021scalable}.
 
 %A clear identification of the research gap within previous research (Formally define andjustify the gap). The research gap is the missing or insufficiently studiedarea/methodology/algorithm found in existing research that the current study aims toinvestigate.
 
@@ -368,19 +365,19 @@ This section outlines the foundational assumptions made during the research desi
 \subsubsection{Assumptions}
 The validity of the experimental results and the effectiveness of the framework rely on several key assumptions:
 \begin{itemize}
-    \item \textbf{Consistency of User Behavior:} It is assumed that the primary user's typing and mouse usage patterns remain relatively stable over the duration of the study.
-    \item \textbf{Integrity of Enrollment:} The research assumes the initial enrollment occurs in a secure environment, ensuring the Deep SVDD model is trained on verified legitimate data.
-    \item \textbf{Security of the Secret Key:} The mathematical irreversibility of the JL-projection relies on the secret key being stored securely on the client side.
-    \item \textbf{Hardware Sufficiency:} It is assumed that the target hardware can perform the linear JL-projections and inference within the required latency bounds.
+    \item \textbf{Consistency of User Behavior:} It is assumed that the primary user's typing and mouse usage patterns remain relatively stable over the duration of the study \cite{kim2018user}.
+    \item \textbf{Integrity of Enrollment:} The research assumes the initial enrollment occurs in a secure environment, ensuring the \ac{Deep SVDD} \cite{ruff2018deepsvdd} model is trained on verified legitimate data.
+    \item \textbf{Security of the Secret Key:} The mathematical irreversibility of the \ac{JL}-projection relies on the secret key being stored securely on the client side \cite{teoh2006random}.
+    \item \textbf{Hardware Sufficiency:} It is assumed that the target hardware can perform the linear \ac{JL}-projections and inference within the required latency bounds \cite{rahman2021scalable}.
 \end{itemize}
 
 \subsubsection{Constraints and Limitations}
 The study is conducted within the following constraints:
 \begin{itemize}
-    \item \textbf{Modality Limitation:} The system is restricted to desktop inputs (keyboard and mouse) and does not include mobile-specific biometrics.
-    \item \textbf{Data Availability:} Evaluation is limited to the diversity and volume of data present in selected benchmark datasets.
+    \item \textbf{Modality Limitation:} The system is restricted to desktop inputs (\ac{KMT}) and does not include mobile-specific biometrics.
+    \item \textbf{Data Availability:} Evaluation is limited to the diversity and volume of data present in selected benchmark datasets such as \ac{BB-MAS} \cite{suais2019bbmas} and the \ac{CMU} dataset \cite{cmu2009benchmark}.
     \item \textbf{Latency vs. Privacy Bound:} A critical constraint is the trade-off between projection dimension $k$ and system performance, targeting a real-time latency of $<200$ms.
-    \item \textbf{Environmental Noise:} Variations in hardware peripherals may introduce noise, potentially affecting the overall Equal Error Rate (EER).
+    \item \textbf{Environmental Noise:} Variations in hardware peripherals may introduce noise, potentially affecting the overall \ac{EER}.
 \end{itemize}
 
 %Assumption in your research work and the identified constraints and limitations. Discusshow these may affect the outcomes

@@ -616,6 +616,7 @@ INPUT sections\2_background.tex
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri12.tfm
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
+INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx10.tfm
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\rm-lmr10.tfm
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmmi10.tfm
@@ -628,7 +629,6 @@ INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmbsy10.t
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri10.tfm
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.tfm
-INPUT C:\Users\Ravin\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT .\sections\3_methodology.tex
 INPUT .\sections\3_methodology.tex
 INPUT .\sections\3_methodology.tex
