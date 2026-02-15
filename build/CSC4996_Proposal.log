@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  14 FEB 2026 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.28)  15 FEB 2026 13:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1362,9 +1362,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package acronym Info: Label `acro:ReLU' newly defined as it shall be overridden
 although it is yet undefined on input line 51.
-[21]) [22] [23
-
-]
+[21]) [22]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1376,7 +1374,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [24] (sections/appendices.tex [25] [26] [27] [28] [29] [30] [31] [32]) [33] (d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.aux)
+ [23
+
+] [24] [25] (sections/appendices.tex [26] [27] [28] [29] [30] [31] [32] [33]) [34] (d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
@@ -1392,17 +1392,17 @@ Package logreq Info: Writing requests to 'CSC4996_Proposal.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 50871 strings out of 467871
- 1141029 string characters out of 5418376
- 2307217 words of memory out of 5000000
- 78155 multiletter control sequences out of 15000+600000
- 785999 words of font info for 280 fonts, out of 8000000 for 9000
+ 50896 strings out of 467871
+ 1141396 string characters out of 5418376
+ 2308217 words of memory out of 5000000
+ 78163 multiletter control sequences out of 15000+600000
+ 786975 words of font info for 288 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  88i,21n,94p,1607b,2314s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Ravin/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (40 pages, 729891 bytes).
+Output written on "d:\My University\CSC4996 Research\Research Proposal\V2\CSC4996_Proposal_V2\build\CSC4996_Proposal.pdf" (41 pages, 740415 bytes).
 PDF statistics:
- 1503 PDF objects out of 1728 (max. 8388607)
- 445 named destinations out of 1000 (max. 500000)
+ 1536 PDF objects out of 1728 (max. 8388607)
+ 446 named destinations out of 1000 (max. 500000)
  87677 words of extra memory for PDF output out of 89155 (max. 10000000)
 
